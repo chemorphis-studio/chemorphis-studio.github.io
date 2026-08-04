@@ -129,10 +129,73 @@ video {
 }
 
 /* Buttons */
+/* New Button & Dropdown Layout */
+.action-container {
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 600px; /* Constrains the width nicely */
+}
+
 .btn-group {
     display: flex;
-    gap: 20px;
-    margin-top: 40px;
+    gap: 15px;
+    width: 100%;
+}
+
+.btn-group .btn {
+    flex: 1; /* Makes both buttons perfectly equal width */
+    text-align: center;
+    padding: 18px 20px;
+}
+
+/* Dropdown specific styling */
+.dropdown {
+    position: relative;
+    width: 100%;
+}
+
+.dropdown .btn {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    background: transparent;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: var(--white);
+    border: 1px solid var(--black);
+    border-top: none;
+    z-index: 10;
+    flex-direction: column;
+}
+
+.dropdown:hover .dropdown-content {
+    display: flex;
+}
+
+.dropdown-content a {
+    padding: 15px 20px;
+    text-decoration: none;
+    color: var(--black);
+    font-size: 0.85rem;
+    font-weight: 700;
+    border-bottom: 1px solid #eee;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.dropdown-content a:hover {
+    background: var(--gray);
+    color: var(--blue);
 }
 
 .btn {
@@ -173,24 +236,31 @@ h2 {
     margin-bottom: 40px;
 }
 
-ul {
+/* Glassmorphism Cards */
+.glass-card {
+    background: rgba(255, 255, 255, 0.03); /* Faint white fill */
+    backdrop-filter: blur(12px); /* The frosted glass effect */
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1); /* Subtle white border */
+    padding: 40px;
+}
+
+/* Clean Lists (No Arrows) */
+.clean-list {
     list-style: none;
+    padding: 0;
 }
 
-li {
-    margin-bottom: 15px;
-    padding-left: 20px;
-    position: relative;
-    font-size: 1.1rem;
+.clean-list li {
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    font-size: 1.05rem;
+    color: #e0e0e0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05); /* Faint separator line */
 }
 
-li::before {
-    content: "→";
-    position: absolute;
-    left: 0;
-    color: var(--red);
-}
-
-.chemorphis-side li::before {
-    color: var(--blue);
+.clean-list li:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
 }
