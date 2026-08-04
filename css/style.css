@@ -251,8 +251,7 @@ video {
 }
 
 /* Force all text to stay white */
-.problem-section h2,
-.problem-section h3 {
+.problem-section h2 {
     color: #ffffff;
 }
 
