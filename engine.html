@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flagship Engine | Chemorphis</title>
+    <link rel="stylesheet" href="css/style.css">
+    
+    <!-- MathJax for rendering formatting like SN2 -->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+        window.MathJax = { tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] } };
+    </script>
+
+    <style>
+        /* Editorial layout specifics for Page 2 */
+        .feature-block {
+            padding: 100px 0;
+            border-top: 1px solid #ddd;
+        }
+        
+        .feature-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .feature-grid.reverse {
+            grid-template-columns: 1.2fr 1fr;
+        }
+
+        .feature-grid.reverse .text-content {
+            order: 2;
+        }
+
+        .media-showcase {
+            background: var(--gray);
+            width: 100%;
+            border: 2px solid var(--black);
+            position: relative;
+        }
+
+        .media-showcase video, .media-showcase img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .sub-feature-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="container">
+        <div class="logo"><a href="index.html" style="text-decoration:none; color:var(--black);">Chemorphis</a></div>
+        <div class="nav-links">
+            <a href="engine.html" style="color: var(--blue);">Flagship Engine</a>
+            <a href="interactive.html">Interactive 3D</a>
+            <a href="graphics.html">Custom Graphics</a>
+            <a href="why.html">Why Us?</a>
+            <a href="contact.html" class="cta-btn">Contact Us</a>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Cinematic Header -->
+        <section class="page-header" style="position: relative; width: 100vw; overflow: hidden; padding-bottom: 0;">
+            <svg width="100%" height="100%" viewBox="0 0 1440 300" preserveAspectRatio="none" fill="none" xmlns="http://www.w3.org/2000/svg" style="position: absolute; left: 0; top: 0; opacity: 0.05; z-index: -1; pointer-events: none;">
+                <path d="M0 50 C 360 200, 1080 -50, 1440 50" stroke="black" stroke-width="2"/>
+                <path d="M0 80 C 360 230, 1080 -20, 1440 80" stroke="black" stroke-width="2"/>
+            </svg>
+            
+            <div class="container" style="text-align: center; margin-bottom: 60px;">
+                <span class="mono-label">// 02. PROPRIETARY RENDERING</span>
+                <h1 style="font-size: 3.5rem; max-width: 1200px; margin: 0 auto 30px auto; letter-spacing: -1px;">Proprietary animation of quantum-mechanically accurate organic mechanisms.</h1>
+            </div>
+
+            <!-- Massive Hero Video -->
+            <div class="container">
+                <div class="media-showcase" style="aspect-ratio: 21/9; border-width: 3px;">
+                    <video autoplay muted loop playsinline preload="auto">
+                        <source src="assets/videos/cyclohexane.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="theater-caption" style="margin: 20px auto 80px auto; max-width: 800px; text-align: center; border-left: none;">
+                    <p style="font-size: 1.1rem; color: #555;"><strong>Cyclohexane Ring Flip:</strong> From Diels-Alder cycloadditions to epoxide ring openings—if it exists on a reaction coordinate, we can visualise it for you.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="container" style="padding-bottom: 0;">
+            <h2 style="font-size: 3rem; font-weight: 900; margin-bottom: 60px; text-transform: uppercase; letter-spacing: -1px;">The Features</h2>
+        </section>
+
+        <!-- Heading 1: Transition States -->
+        <section class="feature-block">
+            <div class="container feature-grid">
+                <div class="text-content">
+                    <h3 class="red-heading" style="font-size: 1.8rem; margin-bottom: 20px;">Transition State Imaginary Mode Animation</h3>
+                    <p style="font-size: 1.15rem; color: #444; margin-bottom: 20px;">On a potential energy surface (PES), the transition state is defined by a saddle point with exactly one imaginary frequency.</p>
+                    <p style="font-size: 1.15rem; color: #444;">We animate these precise vibrational modes (along with non-imaginary ones), allowing students to visually grasp the exact pathway along which bonds break and form.</p>
+                </div>
+                <div class="media-showcase" style="aspect-ratio: 1/1;">
+                    <video autoplay muted loop playsinline preload="auto">
+                        <source src="assets/videos/sn2-ts.mp4" type="video/mp4">
+                    </video>
+                    <div style="position: absolute; bottom: 15px; left: 15px; background: rgba(255,255,255,0.9); padding: 5px 15px; font-family: var(--font-mono); font-size: 0.8rem; border: 1px solid #000;">
+                        S_N2 TS IMAGINARY MODE
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Heading 2: Synchronised Tracking -->
+        <section class="feature-block">
+            <div class="container">
+                <h3 class="blue-heading" style="font-size: 1.8rem; margin-bottom: 20px;">Synchronised Multidimensional Tracking</h3>
+                <p style="font-size: 1.15rem; max-width: 800px; color: #444; margin-bottom: 40px;">Eliminate cognitive overload by connecting spatial orientation directly to energy profile data.</p>
+                
+                <div class="sub-feature-grid">
+                    <div>
+                        <div class="media-showcase" style="aspect-ratio: 16/9; margin-bottom: 20px;">
+                            <img src="assets/images/newman.png" alt="Newman Projection Synchronisation">
+                        </div>
+                        <h4 style="font-size: 1.2rem; margin-bottom: 10px;">Synchronised Newman Projections</h4>
+                        <p style="color: #555;">Track steric hindrance and torsional strain in tandem with 3D spatial rotation.</p>
+                    </div>
+                    <div>
+                        <div class="media-showcase" style="aspect-ratio: 16/9; margin-bottom: 20px; background: #111;">
+                            <img src="assets/images/energy-plot.png" alt="Live Energy Plots">
+                        </div>
+                        <h4 style="font-size: 1.2rem; margin-bottom: 10px;">Live Energy Plots</h4>
+                        <p style="color: #555;">Precisely calculated graphs showing activation energy, transition states, and intermediates. A tracker runs along the curve, perfectly linked to the active animation.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Heading 3 & 4: Electronic Structure -->
+        <section class="feature-block" style="border-bottom: 1px solid #ddd; margin-bottom: 80px;">
+            <div class="container">
+                <h3 class="red-heading" style="font-size: 1.8rem; margin-bottom: 20px;">Electronic Structure & Orbital Surfaces</h3>
+                
+                <div class="sub-feature-grid">
+                    <!-- HOMO LUMO -->
+                    <div>
+                        <div class="media-showcase" style="aspect-ratio: 4/3; margin-bottom: 20px;">
+                            <img src="assets/images/homo-lumo.png" alt="HOMO LUMO Rendering">
+                        </div>
+                        <h4 style="font-size: 1.2rem; margin-bottom: 10px;">HOMO/LUMO Rendering</h4>
+                        <p style="color: #555;">Render highest occupied and lowest unoccupied molecular orbitals to explain regioselectivity and stereospecificity.</p>
+                    </div>
+                    
+                    <!-- ESP Point Clouds -->
+                    <div>
+                        <div class="media-showcase" style="aspect-ratio: 4/3; margin-bottom: 20px;">
+                            <img src="assets/images/esp.png" alt="ESP Point Clouds">
+                        </div>
+                        <h4 style="font-size: 1.2rem; margin-bottom: 10px;">ESP Point Clouds</h4>
+                        <p style="color: #555;">Volumetric electrostatic potential maps revealing exact charge distributions.</p>
+                    </div>
+                </div>
+
+                <!-- Partial Charges Banner -->
+                <div style="margin-top: 80px; display: grid; grid-template-columns: 1fr 2fr; gap: 40px; align-items: center; background: rgba(0,0,255,0.03); padding: 40px; border: 1px solid rgba(0,0,255,0.1);">
+                    <div>
+                        <h3 class="blue-heading" style="font-size: 1.5rem; margin-bottom: 15px;">Dynamic Partial Charges</h3>
+                        <p style="color: #555; font-size: 1.1rem;">See electron density, rendered stunningly in real time.</p>
+                    </div>
+                    <div class="media-showcase" style="aspect-ratio: 21/9;">
+                        <img src="assets/images/partial-charges.png" alt="Dynamic Partial Charges">
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <footer class="container footer-style">
+        &copy; CHEMORPHIS STUDIO. ALL RIGHTS RESERVED. // THE PREMIER CHEMISTRY VISUALISATION TOOL
+    </footer>
+
+</body>
+</html>
