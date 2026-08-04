@@ -254,28 +254,38 @@ h2 {
 }
 
 /* White Box Table Styles */
+/* Redesigned Semi-Transparent Curved Table */
 .white-card {
-    background: var(--white);
+    background: rgba(255, 255, 255, 0.85); /* Semi-transparent white */
+    backdrop-filter: blur(15px); /* Frosted glass effect */
+    -webkit-backdrop-filter: blur(15px);
     color: var(--black);
-    padding: 50px;
-    border: 2px solid var(--black); /* Optional: adds to the architectural feel */
+    padding: 60px 50px;
+    border-radius: 20px; /* Luxurious curved corners */
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2); /* Deep floating shadow */
+    transition: transform 0.3s ease; /* Reactive hover effect */
+}
+
+.white-card:hover {
+    transform: translateY(-5px); /* Subtle float on hover */
 }
 
 .red-heading {
     color: var(--red);
-    margin-bottom: 25px;
+    margin-bottom: 30px;
     text-transform: uppercase;
-    font-size: 1.1rem;
-    letter-spacing: 1px;
+    font-size: 1.6rem; /* Much larger */
+    letter-spacing: -0.5px;
     font-weight: 900;
 }
 
 .blue-heading {
     color: var(--blue);
-    margin-bottom: 25px;
+    margin-bottom: 30px;
     text-transform: uppercase;
-    font-size: 1.1rem;
-    letter-spacing: 1px;
+    font-size: 1.6rem; /* Much larger */
+    letter-spacing: -0.5px;
     font-weight: 900;
 }
 
@@ -293,4 +303,104 @@ h2 {
 /* Override the arrow from earlier if it was still applying */
 .bullet-list li::before {
     content: none !important; 
+}
+
+/* PAGE HEADERS */
+.page-header {
+    padding: 100px 0 60px 0;
+    border-bottom: 1px solid #eee;
+}
+
+/* INTERACTIVE 3D MODELS (Page 3) */
+.model-row {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr; /* Text takes 1 part, Model takes 1.5 parts */
+    gap: 60px;
+    align-items: center;
+    margin-bottom: 100px;
+}
+
+.model-row.reverse {
+    grid-template-columns: 1.5fr 1fr;
+}
+
+.model-row.reverse .model-text {
+    order: 2; /* Flips the text to the right side */
+}
+
+.model-container {
+    background: var(--gray);
+    width: 100%;
+    aspect-ratio: 16/9;
+    border: 2px solid var(--black);
+    border-radius: 10px; /* Slight curve for elegance */
+    overflow: hidden;
+    position: relative;
+}
+
+/* Specific styling for the Google Model Viewer */
+model-viewer {
+    width: 100%;
+    height: 100%;
+    background-color: var(--white);
+    --poster-color: transparent;
+}
+
+/* THEATER LAYOUT (Page 4) */
+.theater-section {
+    padding: 60px 0;
+}
+
+.video-theater {
+    width: 100%;
+    border: 2px solid var(--black);
+    border-radius: 10px;
+    overflow: hidden;
+    background: var(--black);
+    box-shadow: 0 30px 60px rgba(0,0,0,0.1); /* Deep shadow */
+}
+
+.theater-caption {
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    color: #666;
+    margin-top: 20px;
+    padding-left: 20px;
+    border-left: 2px solid var(--blue);
+}
+
+.graphics-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    padding: 80px 0;
+    align-items: center;
+}
+
+/* Reactive Image Hover Effect */
+.graphics-image-container {
+    overflow: hidden;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background: var(--white);
+    padding: 20px;
+}
+
+.reactive-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.graphics-image-container:hover .reactive-image {
+    transform: scale(1.03); /* Cinematic slow zoom on hover */
+}
+
+.footer-style {
+    padding: 40px 0; 
+    border-top: 1px solid #eee; 
+    font-family: var(--font-mono); 
+    font-size: 0.7rem; 
+    color: #888;
 }

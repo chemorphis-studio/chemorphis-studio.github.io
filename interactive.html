@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive 3D | Chemorphis</title>
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Google Model Viewer Script -->
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.1.1/model-viewer.min.js"></script>
+</head>
+<body>
+
+    <nav class="container">
+        <div class="logo"><a href="index.html" style="text-decoration:none; color:var(--black);">Chemorphis</a></div>
+        <div class="nav-links">
+            <a href="engine.html">Flagship Engine</a>
+            <a href="interactive.html" style="color: var(--blue);">Interactive 3D</a>
+            <a href="graphics.html">Custom Graphics</a>
+            <a href="why.html">Why Us?</a>
+            <a href="contact.html" class="cta-btn">Contact Us</a>
+        </div>
+    </nav>
+
+    <main>
+        <section class="page-header container">
+            <span class="mono-label">// 03. WEB-EMBEDDED ASSETS</span>
+            <h1 style="font-size: 4rem; max-width: 1000px;">Interactive Web-Embedded 3D Assets.</h1>
+            <p class="subheading" style="max-width: 800px;">Embed interactive models directly onto your platforms and empower students to manipulate complex geometry with their own hands. No software required.</p>
+        </section>
+
+        <section class="interactive-showcase container">
+            <!-- Asset 1 -->
+            <div class="model-row">
+                <div class="model-text">
+                    <h3 class="blue-heading">Strychnine Complex</h3>
+                    <p>Explore and immerse yourself in detailed 3D diagrams. Users can drag, rotate, and zoom to understand intricate spatial arrangements perfectly.</p>
+                </div>
+                <div class="model-container">
+                    <model-viewer 
+                        src="assets/models/strychnine.glb" 
+                        camera-controls 
+                        auto-rotate 
+                        interaction-prompt="hover" 
+                        shadow-intensity="1">
+                    </model-viewer>
+                </div>
+            </div>
+
+            <!-- Asset 2 -->
+            <div class="model-row reverse">
+                <div class="model-text">
+                    <h3 class="red-heading">Grignard Reaction (Step 1)</h3>
+                    <p>Visualise reaction trajectories. This model details the nucleophilic attack of R-MgCl on propanone, complete with exact spatial trajectories and electron pushing arrows.</p>
+                </div>
+                <div class="model-container">
+                    <model-viewer 
+                        src="assets/models/grignard.glb" 
+                        camera-controls 
+                        auto-rotate 
+                        interaction-prompt="hover" 
+                        shadow-intensity="1">
+                    </model-viewer>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="container footer-style">
+        &copy; CHEMORPHIS STUDIO. ALL RIGHTS RESERVED. // THE PREMIER CHEMISTRY VISUALISATION TOOL
+    </footer>
+
+</body>
+</html>
