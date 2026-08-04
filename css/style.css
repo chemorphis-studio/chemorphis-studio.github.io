@@ -373,6 +373,30 @@ h2 {
     pointer-events: none;
 }
 
+/* Desktop Hover Underline Animation */
+@media (min-width: 1025px) {
+    .nav-links a:not(.cta-btn) {
+        position: relative;
+        padding-bottom: 6px;
+    }
+    .nav-links a:not(.cta-btn)::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background-color: var(--blue);
+        transition: width 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .nav-links a:not(.cta-btn)::after {
+        width: 0;
+    }
+    .nav-links a:not(.cta-btn):hover::after {
+        width: 100%;
+    }
+}
+
 .red-heading {
     color: var(--red);
     margin-bottom: 30px;
@@ -701,23 +725,44 @@ model-viewer {
     }
 
     nav {
-        transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        transition: padding 0.4s cubic-bezier(0.16, 1, 0.3, 1), gap 0.4s cubic-bezier(0.16, 1, 0.3, 1);
         overflow: hidden;
     }
 
-    nav.collapsed-state {
-        padding: 10px 0;
-    }
-
-    nav.collapsed-state .logo, 
-    nav.collapsed-state .nav-links a:not(.cta-btn) {
-        display: none !important;
-    }
-
-    nav.collapsed-state .nav-links {
-        justify-content: center;
+    .nav-links {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
         width: 100%;
+        gap: 15px;
+    }
+
+    .nav-links a:not(.cta-btn) {
+        max-height: 40px;
+        opacity: 1;
         margin: 0;
+        transition: max-height 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease;
+    }
+
+    nav.collapsed-state {
+        padding: 15px 0;
+        gap: 10px;
+    }
+
+    nav.collapsed-state .nav-links a:not(.cta-btn) {
+        max-height: 0;
+        opacity: 0;
+        padding: 0;
+        margin: 0;
+        pointer-events: none;
+    }
+
+    nav.collapsed-state .logo {
+        font-size: 1.2rem;
+        transition: font-size 0.4s ease;
     }
 
     nav.collapsed-state .cta-btn {
@@ -725,15 +770,6 @@ model-viewer {
         margin: 0 auto;
         display: block;
         text-align: center;
-    }
-
-    .nav-links {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 15px 20px;
-        margin-left: 0;
-        width: 100%;
     }
 
     .nav-arrow {
@@ -744,15 +780,16 @@ model-viewer {
         padding-top: 5px;
         color: var(--black);
         user-select: none;
+        transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
     }
 
     nav.collapsed-state .nav-arrow {
         display: block;
     }
 
-    nav.expanded-state .logo, 
     nav.expanded-state .nav-links a:not(.cta-btn) {
-        display: block !important;
+        max-height: 40px;
+        opacity: 1;
     }
 
     nav.expanded-state .nav-links {
@@ -823,13 +860,14 @@ model-viewer {
 
     /* Inject small modern helper labels to keep context clear */
     .matrix-col.old-way::before {
-        content: "<mark>TRADITIONAL</mark>";
+        content: "TRADITIONAL";
         font-family: var(--font-main);
         font-weight: 900;
         font-size: 0.7rem;
         letter-spacing: 1px;
         color: #666;
         display: block;
+        margin-top: 5px;
         margin-bottom: 5px;
     }
 
@@ -841,6 +879,7 @@ model-viewer {
         letter-spacing: 1px;
         color: var(--white);
         display: block;
+        margin-top: 5px;
         margin-bottom: 5px;
     }
 
