@@ -13,6 +13,8 @@
 
 mark {
     background-color: #ffffff;
+    color: var(--blue);
+    padding: 5 5px;
 }
 
 * {
