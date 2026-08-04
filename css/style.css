@@ -11,6 +11,10 @@
     --font-mono: 'Space Mono', monospace;
 }
 
+mark {
+    background-color: #ffffff;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -456,7 +460,7 @@ model-viewer {
 }
 
 .theater-caption {
-    font-family: var(--font-mono);
+    font-family: var(--font-main);
     font-size: 0.85rem;
     color: #666;
     margin-top: 20px;
