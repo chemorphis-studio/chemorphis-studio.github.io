@@ -96,24 +96,20 @@
         const dropdown = document.querySelector('.dropdown');
         let lastScrollY = window.scrollY;
 
-        // 1. Scroll-Collapse Logic
+        // 1. Scroll-Collapse (Collapse only, no auto-expansion on scroll up)
         window.addEventListener('scroll', () => {
             if (window.innerWidth <= 768) {
                 if (window.scrollY > 80 && window.scrollY > lastScrollY) {
-                    // Scrolling down: Collapse nav cleanly
+                    // Scrolling down: Collapse nav
                     if (!nav.classList.contains('expanded-state')) {
                         nav.classList.add('collapsed-state');
                     }
-                } else if (window.scrollY < lastScrollY) {
-                    // Scrolling up: Restore normal nav flow
-                    nav.classList.remove('collapsed-state');
-                    nav.classList.remove('expanded-state');
                 }
                 lastScrollY = window.scrollY;
             }
         });
 
-        // 2. Expand Collapsed Nav via Arrow click
+        // 2. Expand/Collapse strictly controlled by the Arrow
         if (arrow) {
             arrow.addEventListener('click', () => {
                 if (nav.classList.contains('collapsed-state')) {
@@ -126,12 +122,11 @@
             });
         }
 
-        // 3. Mobile Dropdown Open/Close Toggle (Fixed focus-override bug)
+        // 3. Mobile Dropdown Open/Close Toggle (Touch support)
         if (dropdown) {
             dropdown.addEventListener('click', (e) => {
                 if (window.innerWidth <= 1024) {
                     e.stopPropagation();
-                    // Toggle the active class back and forth on tap
                     dropdown.classList.toggle('active');
                 }
             });

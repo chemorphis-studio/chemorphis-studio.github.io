@@ -732,31 +732,6 @@ model-viewer {
         overflow: hidden;
     }
 
-    nav.collapsed-state {
-        padding: 15px 0;
-        gap: 10px;
-    }
-
-    nav.collapsed-state .nav-links a:not(.cta-btn) {
-        max-height: 0;
-        opacity: 0;
-        padding: 0;
-        margin: 0;
-        pointer-events: none;
-    }
-
-    nav.collapsed-state .logo {
-        font-size: 1.2rem;
-        transition: font-size 0.4s ease;
-    }
-
-    nav.collapsed-state .cta-btn {
-        width: 60% !important;
-        margin: 0 auto;
-        display: block;
-        text-align: center;
-    }
-
     .nav-arrow {
         display: none;
         text-align: center;
@@ -784,29 +759,77 @@ model-viewer {
 
     /* 2x2 Grid for Nav Links */
     .nav-links {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: center;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: 
+            "link1 link2"
+            "link3 link4"
+            "cta cta";
+        gap: 15px 20px;
         width: 100%;
-        gap: 15px 20px; /* 15px vertical row gap, 20px horizontal column gap */
+        transition: gap 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .nav-links a:nth-child(1) { grid-area: link1; }
+    .nav-links a:nth-child(2) { grid-area: link2; }
+    .nav-links a:nth-child(3) { grid-area: link3; }
+    .nav-links a:nth-child(4) { grid-area: link4; }
+    .nav-links a.cta-btn { 
+        grid-area: cta; 
+        width: 60% !important;
+        justify-self: center;
     }
 
     .nav-links a:not(.cta-btn) {
-        width: calc(50% - 10px); /* Creates two perfect columns */
+        display: block;
         text-align: center;
-        max-height: 40px;
+        max-height: 40px; /* Fully expanded height */
         opacity: 1;
-        transition: max-height 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease;
+        transform: translateY(0);
+        transition: max-height 0.4s cubic-bezier(0.16, 1, 0.3, 1), 
+                    opacity 0.3s ease, 
+                    transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
     }
 
-    /* Extra padding below Contact Us when Expanded */
-    nav.expanded-state {
-        padding-bottom: 30px; 
+    nav.collapsed-state {
+        padding: 15px 0 10px 0;
+        gap: 5px;
     }
-    nav.expanded-state .cta-btn {
+
+    nav.collapsed-state .nav-links {
+        gap: 0; 
+    }
+
+    nav.collapsed-state .nav-links a:not(.cta-btn) {
+        max-height: 0;
+        opacity: 0;
+        transform: translateY(-10px); 
+        pointer-events: none;
+    }
+
+    nav.collapsed-state .logo {
+        font-size: 1.2rem;
+        transition: font-size 0.4s ease;
+    }
+
+    nav.collapsed-state .cta-btn {
         width: 60% !important;
-        margin-top: 10px; /* Separates the 2x2 grid from the CTA button */
+        margin: 0 auto;
+        display: block;
+        text-align: center;
+    }
+
+    nav.expanded-state {
+        padding-top: 25px;
+        padding-bottom: 30px !important;
+    }
+
+    nav.expanded-state .nav-links {
+        gap: 15px 20px; 
+    }
+
+    nav.expanded-state .cta-btn {
+        margin-top: 15px;
     }
 
     .cta-btn {
