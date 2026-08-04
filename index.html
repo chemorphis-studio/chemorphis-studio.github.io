@@ -21,47 +21,49 @@
 
     <main>
         <!-- HERO SECTION -->
-        <section class="hero container" style="position: relative;">
-            <!-- Abstract PES Wave Graphic -->
-            <svg width="600" height="300" viewBox="0 0 600 300" fill="none" xmlns="http://www.w3.org/2000/svg" style="position: absolute; right: 0; top: 120px; opacity: 0.1; z-index: -1; pointer-events: none;">
-                <path d="M0 100 C 150 200, 450 0, 600 100" stroke="black" stroke-width="1.5"/>
-                <path d="M0 120 C 150 220, 450 20, 600 120" stroke="black" stroke-width="1.5"/>
-                <path d="M0 140 C 150 240, 450 40, 600 140" stroke="black" stroke-width="1.5"/>
-                <path d="M0 160 C 150 260, 450 60, 600 160" stroke="black" stroke-width="1.5"/>
-                <path d="M0 180 C 150 280, 450 80, 600 180" stroke="black" stroke-width="1.5"/>
+        <section class="hero" style="position: relative; width: 100vw; overflow: hidden;">
+            <!-- Abstract PES Wave Graphic (Full Width) -->
+            <svg width="100%" height="300" viewBox="0 0 1440 300" preserveAspectRatio="none" fill="none" xmlns="http://www.w3.org/2000/svg" style="position: absolute; left: 0; top: 120px; opacity: 0.1; z-index: -1; pointer-events: none;">
+                <path d="M0 100 C 360 250, 1080 0, 1440 100" stroke="black" stroke-width="2"/>
+                <path d="M0 130 C 360 280, 1080 30, 1440 130" stroke="black" stroke-width="2"/>
+                <path d="M0 160 C 360 310, 1080 60, 1440 160" stroke="black" stroke-width="2"/>
+                <path d="M0 190 C 360 340, 1080 90, 1440 190" stroke="black" stroke-width="2"/>
+                <path d="M0 220 C 360 370, 1080 120, 1440 220" stroke="black" stroke-width="2"/>
             </svg>
 
-            <div class="hero-content">
-                <h1>Quantum-accurate 3D chemistry visualisations.</h1>
-                <p class="subheading">We are on a mission to revolutionise chemistry education. Will you join us?</p>
-            </div>
+            <div class="container">
+                <div class="hero-content">
+                    <h1>Quantum-accurate 3D chemistry visualisations.</h1>
+                    <p class="subheading">We are on a mission to revolutionise chemistry education. Will you join us?</p>
+                </div>
 
-            <div class="hero-grid">
-                <div class="text-block">
-                    <p>Chemorphis bridges computational chemistry and cinematic rendering. We compute exact reaction coordinates via density functional theory (DFT) calculations, rendered beautifully into brand-matched 3D mechanisms that transform abstract chemistry into intuitive visualisations.</p>
-                    
-                    <!-- New Aligned Button & Dropdown Area -->
-                    <div class="action-container">
-                        <div class="btn-group">
-                            <a href="contact.html" class="btn btn-blue" style="background: var(--red);">Request Custom Sample</a>
-                            <a href="why.html" class="btn btn-blue">Why Work With Us?</a>
-                        </div>
+                <div class="hero-grid">
+                    <div class="text-block">
+                        <p>Chemorphis bridges computational chemistry and cinematic rendering. We compute exact reaction coordinates via density functional theory (DFT) calculations, rendered beautifully into brand-matched, 3D mechanisms that transform abstract chemistry into intuitive visualisations.</p>
                         
-                        <div class="dropdown">
-                            <button class="btn btn-outline">Explore Features <span style="font-size: 0.8rem; margin-left:10px;">▼</span></button>
-                            <div class="dropdown-content">
-                                <a href="engine.html">Flagship Engine</a>
-                                <a href="interactive.html">Interactive 3D Assets</a>
-                                <a href="graphics.html">Publication-Grade Analytics</a>
+                        <!-- Fixed Action Container & Dropdown -->
+                        <div class="action-container">
+                            <div class="btn-group">
+                                <a href="contact.html" class="btn btn-blue" style="background: var(--red);">Request Custom Sample</a>
+                                <a href="why.html" class="btn btn-blue">Why Work With Us?</a>
+                            </div>
+                            
+                            <div class="dropdown">
+                                <div class="btn dropdown-btn">Explore Features <span style="font-size: 0.8rem; margin-left:10px;">▼</span></div>
+                                <div class="dropdown-content">
+                                    <a href="engine.html">Flagship Engine</a>
+                                    <a href="interactive.html">Interactive 3D Assets</a>
+                                    <a href="graphics.html">Publication-Grade Analytics</a>
+                                </div>
                             </div>
                         </div>
-                    </div>
 
-                </div>
-                <div class="hero-video-container">
-                    <video autoplay muted loop playsinline preload="auto">
-                        <source src="./assets/videos/sn2-reaction.mp4" type="video/mp4">
-                    </video>
+                    </div>
+                    <div class="hero-video-container">
+                        <video autoplay muted loop playsinline preload="auto">
+                            <source src="assets/videod/sn2-reaction.mp4" type="video/mp4">
+                        </video>
+                    </div>
                 </div>
             </div>
         </section>
@@ -69,14 +71,13 @@
         <!-- COMPARISON SECTION -->
         <section class="problem-section">
             <div class="container">
-                <!-- Changed to white text here -->
                 <span class="mono-label" style="color: var(--white);">// THE CORE PROBLEM</span>
                 <h2>Traditional chemistry visuals fail students.</h2>
 
                 <div class="grid-2">
-                    <div class="glass-card">
-                        <h3 style="margin-bottom: 25px; color: #aaa; text-transform: uppercase; font-size: 0.9rem; letter-spacing: 1px;">Traditional Graphics</h3>
-                        <ul class="clean-list">
+                    <div class="white-card">
+                        <h3 class="red-heading">Traditional Graphics</h3>
+                        <ul class="bullet-list">
                             <li>Hand-drawn 2D tablet sketches lacking spatial depth.</li>
                             <li>Static, disconnected energy diagrams.</li>
                             <li>Oversimplified, cartoonish orbital overlays.</li>
@@ -84,9 +85,9 @@
                         </ul>
                     </div>
 
-                    <div class="glass-card" style="border-left: 2px solid var(--blue);">
-                        <h3 style="margin-bottom: 25px; color: var(--blue); text-transform: uppercase; font-size: 0.9rem; letter-spacing: 1px;">The Chemorphis Engine</h3>
-                        <ul class="clean-list">
+                    <div class="white-card">
+                        <h3 class="blue-heading">The Chemorphis Engine</h3>
+                        <ul class="bullet-list">
                             <li>Quantum-mechanically computed 3D atomic coordinates.</li>
                             <li>Real-time synchronised potential energy surface (PES) tracking.</li>
                             <li>True electron density and electrostatic potential (ESP) point clouds.</li>

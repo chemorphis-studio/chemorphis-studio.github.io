@@ -129,23 +129,31 @@ video {
 }
 
 /* Buttons */
-/* New Button & Dropdown Layout */
+/* Video Black Outline */
+.hero-video-container {
+    background: var(--gray);
+    width: 100%;
+    aspect-ratio: 16/9;
+    border: 2px solid var(--black); /* Added black outline */
+}
+
+/* Button & Dropdown Layout */
 .action-container {
     margin-top: 40px;
     display: flex;
     flex-direction: column;
-    gap: 15px;
-    max-width: 600px; /* Constrains the width nicely */
+    gap: 20px; /* Exact distance vertically */
+    width: 100%;
 }
 
 .btn-group {
     display: flex;
-    gap: 15px;
+    gap: 20px; /* Exact distance horizontally */
     width: 100%;
 }
 
 .btn-group .btn {
-    flex: 1; /* Makes both buttons perfectly equal width */
+    flex: 1; /* Makes red and blue buttons equal width */
     text-align: center;
     padding: 18px 20px;
 }
@@ -153,16 +161,26 @@ video {
 /* Dropdown specific styling */
 .dropdown {
     position: relative;
-    width: 100%;
+    width: 100%; /* Matches the total width of the two buttons above */
 }
 
-.dropdown .btn {
+.dropdown-btn {
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     cursor: pointer;
-    background: transparent;
+    background: var(--white);
+    color: var(--black);
+    border: 2px solid var(--black);
+    font-weight: 700;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.dropdown-btn:hover {
+    background: var(--gray);
 }
 
 .dropdown-content {
@@ -172,8 +190,8 @@ video {
     left: 0;
     width: 100%;
     background: var(--white);
-    border: 1px solid var(--black);
-    border-top: none;
+    border: 2px solid var(--black);
+    border-top: none; /* Connects it visually to the button */
     z-index: 10;
     flex-direction: column;
 }
@@ -183,7 +201,7 @@ video {
 }
 
 .dropdown-content a {
-    padding: 15px 20px;
+    padding: 18px 20px;
     text-decoration: none;
     color: var(--black);
     font-size: 0.85rem;
@@ -194,7 +212,6 @@ video {
 }
 
 .dropdown-content a:hover {
-    background: var(--gray);
     color: var(--blue);
 }
 
@@ -236,31 +253,44 @@ h2 {
     margin-bottom: 40px;
 }
 
-/* Glassmorphism Cards */
-.glass-card {
-    background: rgba(255, 255, 255, 0.03); /* Faint white fill */
-    backdrop-filter: blur(12px); /* The frosted glass effect */
-    -webkit-backdrop-filter: blur(12px);
-    border: 1px solid rgba(255, 255, 255, 0.1); /* Subtle white border */
-    padding: 40px;
+/* White Box Table Styles */
+.white-card {
+    background: var(--white);
+    color: var(--black);
+    padding: 50px;
+    border: 2px solid var(--black); /* Optional: adds to the architectural feel */
 }
 
-/* Clean Lists (No Arrows) */
-.clean-list {
-    list-style: none;
-    padding: 0;
+.red-heading {
+    color: var(--red);
+    margin-bottom: 25px;
+    text-transform: uppercase;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+    font-weight: 900;
 }
 
-.clean-list li {
-    margin-bottom: 20px;
-    padding-bottom: 20px;
-    font-size: 1.05rem;
-    color: #e0e0e0;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05); /* Faint separator line */
+.blue-heading {
+    color: var(--blue);
+    margin-bottom: 25px;
+    text-transform: uppercase;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+    font-weight: 900;
 }
 
-.clean-list li:last-child {
-    border-bottom: none;
-    margin-bottom: 0;
-    padding-bottom: 0;
+.bullet-list {
+    list-style-type: disc; /* Standard bullet points */
+    padding-left: 20px;
+}
+
+.bullet-list li {
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+    color: var(--black);
+}
+
+/* Override the arrow from earlier if it was still applying */
+.bullet-list li::before {
+    content: none !important; 
 }
