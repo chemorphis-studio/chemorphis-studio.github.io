@@ -65,6 +65,7 @@
             <a href="why.html">Why Us?</a>
             <a href="contact.html" class="cta-btn">Contact Us</a>
         </div>
+        <div class="nav-arrow" id="navArrow">▼</div>
     </nav>
 
     <main>
@@ -76,7 +77,7 @@
             </svg>
             
             <div class="container" style="text-align: center; margin-bottom: 60px;">
-                <span class="mono-label">// 02. PROPRIETARY RENDERING</span>
+                <span class="mono-label">// 02. ANIMATION ENGINE</span>
                 <h1 style="font-size: 3.5rem; max-width: 1200px; margin: 0 auto 30px auto; letter-spacing: -1px;">Proprietary animation of quantum-mechanically accurate organic mechanisms.</h1>
             </div>
 
@@ -193,5 +194,46 @@
         &copy; CHEMORPHIS STUDIO. ALL RIGHTS RESERVED. // THE PREMIER CHEMISTRY VISUALISATION TOOL
     </footer>
 
+    <script>
+        const nav = document.querySelector('nav');
+        const arrow = document.getElementById('navArrow');
+        const dropdown = document.querySelector('.dropdown');
+        let lastScrollY = window.scrollY;
+
+        window.addEventListener('scroll', () => {
+            if (window.innerWidth <= 768) {
+                if (window.scrollY > 80 && window.scrollY > lastScrollY) {
+                    if (!nav.classList.contains('expanded-state')) {
+                        nav.classList.add('collapsed-state');
+                    }
+                } else if (window.scrollY < lastScrollY) {
+                    nav.classList.remove('collapsed-state');
+                    nav.classList.remove('expanded-state');
+                }
+                lastScrollY = window.scrollY;
+            }
+        });
+
+        if (arrow) {
+            arrow.addEventListener('click', () => {
+                if (nav.classList.contains('collapsed-state')) {
+                    nav.classList.remove('collapsed-state');
+                    nav.classList.add('expanded-state');
+                } else if (nav.classList.contains('expanded-state')) {
+                    nav.classList.remove('expanded-state');
+                    nav.classList.add('collapsed-state');
+                }
+            });
+        }
+
+        if (dropdown) {
+            dropdown.addEventListener('click', (e) => {
+                if (window.innerWidth <= 1024) {
+                    e.stopPropagation();
+                    dropdown.classList.toggle('active');
+                }
+            });
+        }
+    </script>
 </body>
 </html>

@@ -19,6 +19,7 @@
             <a href="why.html" style="color: var(--blue);">Why Us?</a>
             <a href="contact.html" class="cta-btn">Contact Us</a>
         </div>
+        <div class="nav-arrow" id="navArrow">▼</div>
     </nav>
 
     <main>
@@ -38,7 +39,7 @@
 
         <section class="container" style="padding-bottom: 40px;">
             <div style="max-width: 800px;">
-                <p style="font-size: 1.2rem; margin-bottom: 20px;">In educational psychology, Sweller’s <strong>cognitive load theory</strong> and Paivio’s <strong>dual-coding theory</strong> state that learning is heavily hindered when students must mentally integrate disjointed visual and abstract information (the <em>split-attention effect</em>).</p>
+                <p style="font-size: 1.2rem; margin-top: 10px; margin-bottom: 20px;">In educational psychology, Sweller’s <strong>cognitive load theory</strong> and Paivio’s <strong>dual-coding theory</strong> state that learning is heavily hindered when students must mentally integrate disjointed visual and abstract information (the <em>split-attention effect</em>).</p>
                 
                 <p style="font-size: 1.2rem; color: #555;">When a student watches a traditional lecture, they must look at a 2D molecule, mentally rotate it in 3D, read a separate energy graph on another slide, and infer motion from a static arrow—all at once.</p>
 
@@ -89,5 +90,46 @@
         &copy; CHEMORPHIS STUDIO. ALL RIGHTS RESERVED. // THE PREMIER CHEMISTRY VISUALISATION TOOL
     </footer>
 
+    <script>
+        const nav = document.querySelector('nav');
+        const arrow = document.getElementById('navArrow');
+        const dropdown = document.querySelector('.dropdown');
+        let lastScrollY = window.scrollY;
+
+        window.addEventListener('scroll', () => {
+            if (window.innerWidth <= 768) {
+                if (window.scrollY > 80 && window.scrollY > lastScrollY) {
+                    if (!nav.classList.contains('expanded-state')) {
+                        nav.classList.add('collapsed-state');
+                    }
+                } else if (window.scrollY < lastScrollY) {
+                    nav.classList.remove('collapsed-state');
+                    nav.classList.remove('expanded-state');
+                }
+                lastScrollY = window.scrollY;
+            }
+        });
+
+        if (arrow) {
+            arrow.addEventListener('click', () => {
+                if (nav.classList.contains('collapsed-state')) {
+                    nav.classList.remove('collapsed-state');
+                    nav.classList.add('expanded-state');
+                } else if (nav.classList.contains('expanded-state')) {
+                    nav.classList.remove('expanded-state');
+                    nav.classList.add('collapsed-state');
+                }
+            });
+        }
+
+        if (dropdown) {
+            dropdown.addEventListener('click', (e) => {
+                if (window.innerWidth <= 1024) {
+                    e.stopPropagation();
+                    dropdown.classList.toggle('active');
+                }
+            });
+        }
+    </script>
 </body>
 </html>

@@ -626,14 +626,29 @@ model-viewer {
 /* 1. TABLET LAYOUTS (max-width: 1024px) */
 @media (max-width: 1024px) {
     .container {
-        padding: 0 30px; /* Tighter padding for standard tablet viewports */
+        padding: 0 30px;
     }
 
     h1 {
-        font-size: 3.5rem; /* Scale down oversized headings */
+        font-size: 3.5rem; 
     }
 
-    /* Stack major page grids to 1 column */
+    nav {
+        flex-direction: column;
+        height: auto;
+        padding: 20px 0;
+        gap: 15px;
+    }
+
+    .nav-links {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        gap: 15px;
+        margin-left: 0;
+    }
+
     .hero-grid, 
     .grid-2, 
     .model-row, 
@@ -645,7 +660,7 @@ model-viewer {
     }
 
     .model-row.reverse .model-text {
-        order: initial; /* Reset reverse row orders to normal flow on mobile */
+        order: initial;
     }
 
     .feature-grid, .feature-grid.reverse {
@@ -661,12 +676,13 @@ model-viewer {
 /* 2. MOBILE PHONE LAYOUTS (max-width: 768px) */
 @media (max-width: 768px) {
     section {
-        padding: 80px 0; /* Reduced top/bottom padding to feel tighter on phones */
+        padding: 80px 0;
     }
 
     h1 {
-        font-size: 2.6rem; /* Fluid title scaling for high readability on phones */
+        font-size: 2.6rem;
         letter-spacing: -1.5px;
+        text-align: center;
     }
 
     h2 {
@@ -679,12 +695,36 @@ model-viewer {
         margin-bottom: 40px;
     }
 
-    /* Clean Mobile Navigation Stacking */
+    .dropdown:focus-within .dropdown-content,
+    .dropdown.active .dropdown-content {
+        display: flex !important;
+    }
+
     nav {
-        flex-direction: column;
-        height: auto;
-        padding: 25px 0;
-        gap: 20px;
+        transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        overflow: hidden;
+    }
+
+    nav.collapsed-state {
+        padding: 10px 0;
+    }
+
+    nav.collapsed-state .logo, 
+    nav.collapsed-state .nav-links a:not(.cta-btn) {
+        display: none !important;
+    }
+
+    nav.collapsed-state .nav-links {
+        justify-content: center;
+        width: 100%;
+        margin: 0;
+    }
+
+    nav.collapsed-state .cta-btn {
+        width: 60% !important;
+        margin: 0 auto;
+        display: block;
+        text-align: center;
     }
 
     .nav-links {
@@ -696,15 +736,48 @@ model-viewer {
         width: 100%;
     }
 
+    .nav-arrow {
+        display: none;
+        text-align: center;
+        font-size: 1rem;
+        cursor: pointer;
+        padding-top: 5px;
+        color: var(--black);
+        user-select: none;
+    }
+
+    nav.collapsed-state .nav-arrow {
+        display: block;
+    }
+
+    nav.expanded-state .logo, 
+    nav.expanded-state .nav-links a:not(.cta-btn) {
+        display: block !important;
+    }
+
+    nav.expanded-state .nav-links {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav.expanded-state .cta-btn {
+        width: 60% !important;
+    }
+
+    nav.expanded-state .nav-arrow {
+        transform: rotate(180deg);
+    }
+
     .nav-links a {
         margin-left: 0;
         font-size: 0.85rem;
     }
 
     .cta-btn {
-        width: 100%;
+        width: 60%;
         text-align: center;
         padding: 12px 0;
+        margin-bottom: 12 px;
     }
 
     /* Button Group Mobile Stacking */
@@ -750,12 +823,12 @@ model-viewer {
 
     /* Inject small modern helper labels to keep context clear */
     .matrix-col.old-way::before {
-        content: "TRADITIONAL";
+        content: "<mark>TRADITIONAL</mark>";
         font-family: var(--font-main);
         font-weight: 900;
         font-size: 0.7rem;
         letter-spacing: 1px;
-        color: var(--red);
+        color: #666;
         display: block;
         margin-bottom: 5px;
     }
@@ -766,7 +839,7 @@ model-viewer {
         font-weight: 900;
         font-size: 0.7rem;
         letter-spacing: 1px;
-        color: var(--blue);
+        color: var(--white);
         display: block;
         margin-bottom: 5px;
     }

@@ -18,6 +18,7 @@
             <a href="why.html">Why Us?</a>
             <a href="contact.html" class="cta-btn">Contact Us</a>
         </div>
+        <div class="nav-arrow" id="navArrow">▼</div>
     </nav>
 
     <main>
@@ -116,5 +117,46 @@
         &copy; CHEMORPHIS STUDIO. ALL RIGHTS RESERVED. // THE PREMIER CHEMISTRY VISUALISATION TOOL
     </footer>
 
+    <script>
+        const nav = document.querySelector('nav');
+        const arrow = document.getElementById('navArrow');
+        const dropdown = document.querySelector('.dropdown');
+        let lastScrollY = window.scrollY;
+
+        window.addEventListener('scroll', () => {
+            if (window.innerWidth <= 768) {
+                if (window.scrollY > 80 && window.scrollY > lastScrollY) {
+                    if (!nav.classList.contains('expanded-state')) {
+                        nav.classList.add('collapsed-state');
+                    }
+                } else if (window.scrollY < lastScrollY) {
+                    nav.classList.remove('collapsed-state');
+                    nav.classList.remove('expanded-state');
+                }
+                lastScrollY = window.scrollY;
+            }
+        });
+
+        if (arrow) {
+            arrow.addEventListener('click', () => {
+                if (nav.classList.contains('collapsed-state')) {
+                    nav.classList.remove('collapsed-state');
+                    nav.classList.add('expanded-state');
+                } else if (nav.classList.contains('expanded-state')) {
+                    nav.classList.remove('expanded-state');
+                    nav.classList.add('collapsed-state');
+                }
+            });
+        }
+
+        if (dropdown) {
+            dropdown.addEventListener('click', (e) => {
+                if (window.innerWidth <= 1024) {
+                    e.stopPropagation();
+                    dropdown.classList.toggle('active');
+                }
+            });
+        }
+    </script>
 </body>
 </html>
