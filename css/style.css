@@ -753,11 +753,6 @@ model-viewer {
         opacity: 1;
     }
 
-    nav.expanded-state .nav-links {
-        flex-direction: column;
-        align-items: center;
-    }
-
     /* 2x2 Grid for Nav Links */
     .nav-links {
         display: grid;
@@ -767,7 +762,8 @@ model-viewer {
             "link3 link4"
             "cta cta";
         gap: 15px 20px;
-        width: 100%;
+        width: fit-content;
+        margin: 0 auto;
         transition: gap 0.4s cubic-bezier(0.16, 1, 0.3, 1);
     }
 
@@ -837,7 +833,7 @@ model-viewer {
         width: 60%;
         text-align: center;
         padding: 12px 0;
-        margin-bottom: 12 px;
+        margin-bottom: 12px;
     }
 
     /* Button Group Mobile Stacking */
