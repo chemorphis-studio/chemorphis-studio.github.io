@@ -231,48 +231,50 @@ video {
     position: relative;
     overflow: hidden;
 
-    background: var(--black);
-    color: var(--white);
+    background: #0a0a0a;
+    color: white;
 
     isolation: isolate;
 }
 
-/* Large blurred glow */
 .problem-section::before {
     content: "";
     position: absolute;
-
-    width: 700px;
-    height: 700px;
-
-    top: -250px;
-    right: -200px;
+    inset: 0;
 
     background:
-        radial-gradient(circle,
-            rgba(255,255,255,0.08) 0%,
-            rgba(255,255,255,0.03) 35%,
-            transparent 70%);
+        radial-gradient(circle at 85% 20%,
+            rgba(74,144,226,0.18) 0%,
+            rgba(74,144,226,0.08) 25%,
+            transparent 55%),
+        radial-gradient(circle at 15% 80%,
+            rgba(255,255,255,0.06) 0%,
+            transparent 45%);
 
-    filter: blur(40px);
-    z-index: -1;
+    filter: blur(60px);
+
+    z-index: 0;
 }
 
-/* Circular outline */
 .problem-section::after {
     content: "";
     position: absolute;
 
-    width: 500px;
-    height: 500px;
+    width: 550px;
+    height: 550px;
 
+    left: -180px;
     bottom: -180px;
-    left: -120px;
 
     border: 1px solid rgba(255,255,255,0.08);
     border-radius: 50%;
 
-    z-index: -1;
+    z-index: 0;
+}
+
+.problem-section > * {
+    position: relative;
+    z-index: 1;
 }
 
 .grid-2 {
