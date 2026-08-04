@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Why Us | Chemorphis</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.1.1/model-viewer.min.js"></script>
+</head>
+<body>
+
+    <nav class="container">
+        <div class="logo"><a href="index.html" style="text-decoration:none; color:var(--black);">Chemorphis</a></div>
+        <div class="nav-links">
+            <a href="engine.html">Flagship Engine</a>
+            <a href="interactive.html">Interactive 3D</a>
+            <a href="graphics.html">Custom Graphics</a>
+            <a href="why.html" style="color: var(--blue);">Why Us?</a>
+            <a href="contact.html" class="cta-btn">Contact Us</a>
+        </div>
+    </nav>
+
+    <main>
+        <section class="page-header" style="position: relative; width: 100vw; overflow: hidden;">
+            <svg width="100%" height="100%" viewBox="0 0 1440 300" preserveAspectRatio="none" fill="none" xmlns="http://www.w3.org/2000/svg" style="position: absolute; left: 0; top: 0; opacity: 0.05; z-index: -1; pointer-events: none;">
+                <path d="M0 50 C 360 200, 1080 -50, 1440 50" stroke="black" stroke-width="2"/>
+                <path d="M0 80 C 360 230, 1080 -20, 1440 80" stroke="black" stroke-width="2"/>
+                <path d="M0 110 C 360 260, 1080 10, 1440 110" stroke="black" stroke-width="2"/>
+                <path d="M0 140 C 360 290, 1080 40, 1440 140" stroke="black" stroke-width="2"/>
+            </svg>
+            <div class="container">
+                <span class="mono-label">// 05. EDUCATIONAL PSYCHOLOGY</span>
+                <h1 style="font-size: 4rem; max-width: 1000px;">The Cognitive Bottleneck.</h1>
+                <p class="subheading" style="max-width: 800px;">Chemistry is fundamentally a three-dimensional science, yet 95% of chemistry education is taught using two-dimensional, static approximations.</p>
+            </div>
+        </section>
+
+        <section class="container" style="padding-bottom: 40px;">
+            <div style="max-width: 800px;">
+                <p style="font-size: 1.2rem; margin-bottom: 20px;">In educational psychology, Sweller’s <strong>cognitive load theory</strong> and Paivio’s <strong>dual-coding theory</strong> state that learning is heavily hindered when students must mentally integrate disjointed visual and abstract information (the <em>split-attention effect</em>).</p>
+                
+                <p style="font-size: 1.2rem; color: #555;">When a student watches a traditional lecture, they must look at a 2D molecule, mentally rotate it in 3D, read a separate energy graph on another slide, and infer motion from a static arrow—all at once.</p>
+
+                <div class="massive-callout">
+                    We do not guess how molecules move. We calculate them.
+                </div>
+
+                <p style="font-size: 1.2rem; margin-bottom: 20px;">Chemorphis animations eliminate cognitive friction by unifying these channels into a single, synchronised visual feed.</p>
+                <p style="font-size: 1.2rem; font-weight: 700; color: var(--blue);">We at Chemorphis are chemists first and animators second. Every concept is securely rooted in core science.</p>
+            </div>
+        </section>
+
+        <section class="container">
+            <h2 style="font-size: 2.5rem; border-bottom: 2px solid var(--black); padding-bottom: 20px; margin-bottom: 40px;">Built for your brand. Designed for your platform.</h2>
+            <p style="font-size: 1.1rem; max-width: 800px; margin-bottom: 60px;">We never force generic styles onto your curriculum. Every asset is built from scratch to integrate into your visual brand identity. Colour palettes, typography, UI, and every fine detail can be controlled.</p>
+
+            <!-- Image Comparison -->
+            <div class="side-by-side-grid">
+                <div class="media-box"><img src="assets/images/1.png" alt="Style 1"></div>
+                <div class="media-box"><img src="assets/images/2.png" alt="Style 2"></div>
+            </div>
+
+            <!-- GLB Comparison -->
+            <div class="side-by-side-grid">
+                <div class="media-box">
+                    <model-viewer src="assets/models/1.glb" camera-controls auto-rotate></model-viewer>
+                </div>
+                <div class="media-box">
+                    <model-viewer src="assets/models/2.glb" camera-controls auto-rotate></model-viewer>
+                </div>
+            </div>
+
+            <!-- Video Comparison -->
+            <div class="side-by-side-grid" style="margin-bottom: 60px;">
+                <div class="media-box">
+                    <video autoplay muted loop playsinline><source src="assets/video/1.mp4" type="video/mp4"></video>
+                </div>
+                <div class="media-box">
+                    <video autoplay muted loop playsinline><source src="assets/video/2.mp4" type="video/mp4"></video>
+                </div>
+            </div>
+
+            <p style="font-size: 1.1rem; font-weight: 700; text-align: center; color: var(--red);">* Extra features and distinct visual styles can be developed upon request.</p>
+        </section>
+    </main>
+
+    <footer class="container footer-style">
+        &copy; CHEMORPHIS STUDIO. ALL RIGHTS RESERVED. // THE PREMIER CHEMISTRY VISUALISATION TOOL
+    </footer>
+
+</body>
+</html>
