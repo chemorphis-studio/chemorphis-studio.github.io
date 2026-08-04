@@ -228,15 +228,13 @@ video {
 
 /* Comparison Section */
 .problem-section {
-    position: relative;
-    overflow: hidden;
+    background:
+        linear-gradient(rgba(255,255,255,.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.03) 1px, transparent 1px),
+        #0b0b0b;
 
-    background: #0a0a0a;
-    color: white;
-
-    isolation: isolate;
+    background-size: 40px 40px;
 }
-
 .problem-section::before {
     content: "";
     position: absolute;
