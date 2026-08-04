@@ -29,7 +29,6 @@ body {
     overflow-x: hidden;
 }
 
-/* Luxury Layout Utilities */
 .container {
     max-width: 1400px;
     margin: 0 auto;
@@ -134,7 +133,7 @@ video {
     background: var(--gray);
     width: 100%;
     aspect-ratio: 16/9;
-    border: 2px solid var(--black); /* Added black outline */
+    border: 2px solid var(--black);
 }
 
 /* Button & Dropdown Layout */
@@ -142,18 +141,18 @@ video {
     margin-top: 40px;
     display: flex;
     flex-direction: column;
-    gap: 20px; /* Exact distance vertically */
+    gap: 20px;
     width: 100%;
 }
 
 .btn-group {
     display: flex;
-    gap: 20px; /* Exact distance horizontally */
+    gap: 20px;
     width: 100%;
 }
 
 .btn-group .btn {
-    flex: 1; /* Makes red and blue buttons equal width */
+    flex: 1;
     text-align: center;
     padding: 18px 20px;
 }
@@ -161,7 +160,7 @@ video {
 /* Dropdown specific styling */
 .dropdown {
     position: relative;
-    width: 100%; /* Matches the total width of the two buttons above */
+    width: 100%;
 }
 
 .dropdown-btn {
@@ -191,7 +190,7 @@ video {
     width: 100%;
     background: var(--white);
     border: 2px solid var(--black);
-    border-top: none; /* Connects it visually to the button */
+    border-top: none;
     z-index: 10;
     flex-direction: column;
 }
@@ -254,27 +253,26 @@ h2 {
 }
 
 /* White Box Table Styles */
-/* Redesigned Semi-Transparent Curved Table */
 .white-card {
-    background: rgba(255, 255, 255, 1.0); /* Semi-transparent white */
-    backdrop-filter: blur(15px); /* Frosted glass effect */
+    background: rgba(255, 255, 255, 1.0);
+    backdrop-filter: blur(15px);
     -webkit-backdrop-filter: blur(15px);
     color: var(--black);
     padding: 60px 50px;
-    border-radius: 20px; /* Luxurious curved corners */
+    border-radius: 20px;
     border: 1px solid rgba(255, 255, 255, 0.4);
-    transition: transform 0.3s ease; /* Reactive hover effect */
+    transition: transform 0.3s ease;
 }
 
 .white-card:hover {
-    transform: translateY(-5px); /* Subtle float on hover */
+    transform: translateY(-5px);
 }
 
 .red-heading {
     color: var(--red);
     margin-bottom: 30px;
     text-transform: uppercase;
-    font-size: 1.6rem; /* Much larger */
+    font-size: 1.6rem;
     letter-spacing: -0.5px;
     font-weight: 900;
 }
@@ -283,13 +281,13 @@ h2 {
     color: var(--blue);
     margin-bottom: 30px;
     text-transform: uppercase;
-    font-size: 1.6rem; /* Much larger */
+    font-size: 1.6rem; 
     letter-spacing: -0.5px;
     font-weight: 900;
 }
 
 .bullet-list {
-    list-style-type: disc; /* Standard bullet points */
+    list-style-type: disc; 
     padding-left: 20px;
 }
 
@@ -299,7 +297,6 @@ h2 {
     color: var(--black);
 }
 
-/* Override the arrow from earlier if it was still applying */
 .bullet-list li::before {
     content: none !important; 
 }
@@ -313,7 +310,7 @@ h2 {
 /* INTERACTIVE 3D MODELS (Page 3) */
 .model-row {
     display: grid;
-    grid-template-columns: 1fr 1.5fr; /* Text takes 1 part, Model takes 1.5 parts */
+    grid-template-columns: 1fr 1.5fr;
     gap: 60px;
     align-items: center;
     margin-bottom: 100px;
@@ -324,7 +321,7 @@ h2 {
 }
 
 .model-row.reverse .model-text {
-    order: 2; /* Flips the text to the right side */
+    order: 2; 
 }
 
 .model-container {
@@ -332,7 +329,7 @@ h2 {
     width: 100%;
     aspect-ratio: 16/9;
     border: 2px solid var(--black);
-    border-radius: 10px; /* Slight curve for elegance */
+    border-radius: 10px; 
     overflow: hidden;
     position: relative;
 }
@@ -356,7 +353,7 @@ model-viewer {
     border-radius: 10px;
     overflow: hidden;
     background: var(--black);
-    box-shadow: 0 30px 60px rgba(0,0,0,0.1); /* Deep shadow */
+    box-shadow: 0 30px 60px rgba(0,0,0,0.1); 
 }
 
 .theater-caption {
@@ -393,7 +390,7 @@ model-viewer {
 }
 
 .graphics-image-container:hover .reactive-image {
-    transform: scale(1.03); /* Cinematic slow zoom on hover */
+    transform: scale(1.03); 
 }
 
 .footer-style {
@@ -445,7 +442,7 @@ model-viewer {
     max-width: 900px;
     margin: 80px auto 0 auto;
     padding-left: 40px;
-    border-left: 2px solid #ddd; /* Single clean hairline */
+    border-left: 2px solid #ddd;
 }
 
 .timeline-item {
@@ -458,7 +455,7 @@ model-viewer {
 .timeline-item::before {
     content: '';
     position: absolute;
-    left: -49px; /* Centers the dot exactly on the border */
+    left: -49px;
     top: 5px;
     width: 14px;
     height: 14px;
@@ -493,7 +490,7 @@ model-viewer {
 }
 
 .timeline-content {
-    background: transparent; /* No more AI-style cards */
+    background: transparent;
     padding: 0;
     box-shadow: none;
     border: none;
@@ -501,7 +498,7 @@ model-viewer {
 }
 
 .timeline-item:hover .timeline-content {
-    transform: translateX(10px); /* Just a subtle text shift */
+    transform: translateX(10px); 
 }
 
 .timeline-content h3 {
