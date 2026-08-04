@@ -732,21 +732,6 @@ model-viewer {
         overflow: hidden;
     }
 
-    .nav-links {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        width: 100%;
-        gap: 15px;
-    }
-
-    .nav-links a:not(.cta-btn) {
-        max-height: 40px;
-        opacity: 1;
-        margin: 0;
-        transition: max-height 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease;
-    }
-
     nav.collapsed-state {
         padding: 15px 0;
         gap: 10px;
@@ -797,17 +782,31 @@ model-viewer {
         align-items: center;
     }
 
+    /* 2x2 Grid for Nav Links */
+    .nav-links {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 100%;
+        gap: 15px 20px; /* 15px vertical row gap, 20px horizontal column gap */
+    }
+
+    .nav-links a:not(.cta-btn) {
+        width: calc(50% - 10px); /* Creates two perfect columns */
+        text-align: center;
+        max-height: 40px;
+        opacity: 1;
+        transition: max-height 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease;
+    }
+
+    /* Extra padding below Contact Us when Expanded */
+    nav.expanded-state {
+        padding-bottom: 30px; 
+    }
     nav.expanded-state .cta-btn {
         width: 60% !important;
-    }
-
-    nav.expanded-state .nav-arrow {
-        transform: rotate(180deg);
-    }
-
-    .nav-links a {
-        margin-left: 0;
-        font-size: 0.85rem;
+        margin-top: 10px; /* Separates the 2x2 grid from the CTA button */
     }
 
     .cta-btn {
@@ -903,5 +902,10 @@ model-viewer {
 
     .timeline-content h3 {
         font-size: 1.4rem;
+    }
+
+    /* Disable sticky desktop hover on touch devices */
+    .dropdown:hover .dropdown-content {
+        display: none;
     }
 }
