@@ -361,9 +361,9 @@ model-viewer {
 }
 
 .theater-caption {
-    font-family: var(--font-main); /* Changed to standard text */
-    font-size: 0.95rem; /* Slightly larger to match standard text */
-    color: #444; /* Slightly darker for better readability */
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    color: #666;
     margin-top: 20px;
     padding-left: 20px;
     border-left: 2px solid var(--blue);
