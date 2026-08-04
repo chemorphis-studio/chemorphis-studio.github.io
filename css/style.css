@@ -618,3 +618,178 @@ model-viewer {
     line-height: 1.7;
     max-width: 600px;
 }
+
+/* ==========================================================================
+   RESPONSIVE DESIGN SYSTEM (TABLETS & MOBILE)
+   ========================================================================== */
+
+/* 1. TABLET LAYOUTS (max-width: 1024px) */
+@media (max-width: 1024px) {
+    .container {
+        padding: 0 30px; /* Tighter padding for standard tablet viewports */
+    }
+
+    h1 {
+        font-size: 3.5rem; /* Scale down oversized headings */
+    }
+
+    /* Stack major page grids to 1 column */
+    .hero-grid, 
+    .grid-2, 
+    .model-row, 
+    .model-row.reverse, 
+    .graphics-grid, 
+    .sub-feature-grid {
+        grid-template-columns: 1fr !important;
+        gap: 50px;
+    }
+
+    .model-row.reverse .model-text {
+        order: initial; /* Reset reverse row orders to normal flow on mobile */
+    }
+
+    .feature-grid, .feature-grid.reverse {
+        grid-template-columns: 1fr !important;
+        gap: 40px;
+    }
+
+    .feature-grid.reverse .text-content {
+        order: initial;
+    }
+}
+
+/* 2. MOBILE PHONE LAYOUTS (max-width: 768px) */
+@media (max-width: 768px) {
+    section {
+        padding: 80px 0; /* Reduced top/bottom padding to feel tighter on phones */
+    }
+
+    h1 {
+        font-size: 2.6rem; /* Fluid title scaling for high readability on phones */
+        letter-spacing: -1.5px;
+    }
+
+    h2 {
+        font-size: 2.2rem;
+        letter-spacing: -1px;
+    }
+
+    .subheading {
+        font-size: 1.25rem;
+        margin-bottom: 40px;
+    }
+
+    /* Clean Mobile Navigation Stacking */
+    nav {
+        flex-direction: column;
+        height: auto;
+        padding: 25px 0;
+        gap: 20px;
+    }
+
+    .nav-links {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px 20px;
+        margin-left: 0;
+        width: 100%;
+    }
+
+    .nav-links a {
+        margin-left: 0;
+        font-size: 0.85rem;
+    }
+
+    .cta-btn {
+        width: 100%;
+        text-align: center;
+        padding: 12px 0;
+    }
+
+    /* Button Group Mobile Stacking */
+    .btn-group {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    /* Page 5 Side-by-Side Media Boxes */
+    .side-by-side-grid {
+        grid-template-columns: 1fr !important; /* Stack comparisons vertically */
+        gap: 20px;
+    }
+
+    /* Page 2 Partial Charges Banner Block */
+    main div[style*="grid-template-columns: 1fr 2fr"] {
+        grid-template-columns: 1fr !important;
+        padding: 25px !important;
+    }
+
+    /* Editorial Comparison Matrix Mobile Reconstruction */
+    .matrix-header {
+        display: none; /* Hide the desktop table headers on mobile */
+    }
+
+    .matrix-row {
+        grid-template-columns: 1fr !important; /* Complete vertical stack */
+        gap: 15px;
+        padding: 30px 0;
+    }
+
+    .matrix-row:hover {
+        background: transparent; /* Disable hover background effect on touch devices */
+    }
+
+    .matrix-col.label {
+        font-size: 0.9rem;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+        padding-bottom: 8px;
+        margin-bottom: 5px;
+        color: var(--white);
+    }
+
+    /* Inject small modern helper labels to keep context clear */
+    .matrix-col.old-way::before {
+        content: "TRADITIONAL";
+        font-family: var(--font-main);
+        font-weight: 900;
+        font-size: 0.7rem;
+        letter-spacing: 1px;
+        color: var(--red);
+        display: block;
+        margin-bottom: 5px;
+    }
+
+    .matrix-col.new-way::before {
+        content: "CHEMORPHIS ENGINE";
+        font-family: var(--font-main);
+        font-weight: 900;
+        font-size: 0.7rem;
+        letter-spacing: 1px;
+        color: var(--blue);
+        display: block;
+        margin-bottom: 5px;
+    }
+
+    /* Page 6 Timeline Spacing Tweak for Narrow Screens */
+    .timeline {
+        padding-left: 20px;
+    }
+
+    .timeline::before {
+        left: 4px; /* Shift the vertical track left */
+    }
+
+    .timeline-item {
+        padding-left: 30px;
+    }
+
+    .timeline-item::before {
+        left: -31px; /* Align timeline dots correctly to the shifted track */
+        top: 4px;
+    }
+
+    .timeline-content h3 {
+        font-size: 1.4rem;
+    }
+}
