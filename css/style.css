@@ -650,20 +650,23 @@ model-viewer {
     background-image: 
         linear-gradient(rgba(0, 0, 0, 0.03) 1px, transparent 1px),
         linear-gradient(90deg, rgba(0, 0, 0, 0.03) 1px, transparent 1px);
-    background-size: 40px 40px; /* Size of grid squares */
+    background-size: 40px 40px;
 }
 
-/* Vignette fade-out effect so grid softly dissolves towards section edges */
 .blueprint-grid::after {
     content: '';
     position: absolute;
-    top: 0; left: 0; right: 0; bottom: 0;
-    background: radial-gradient(circle, transparent 30%, var(--white) 80%);
+    inset: 0;
+    background: radial-gradient(
+        circle,
+        transparent 50%,
+        rgba(255, 255, 255, 0.25) 80%,
+        rgba(255, 255, 255, 0.5) 100%
+    );
     pointer-events: none;
     z-index: 1;
 }
 
-/* Ensure contents stay on top of the grid vignette */
 .blueprint-grid .container {
     position: relative;
     z-index: 2;
@@ -828,7 +831,7 @@ model-viewer {
     .cta-btn {
         width: 60%;
         text-align: center;
-        padding: 12px 0;
+        padding: 12px 12px;
         margin-bottom: 12px;
     }
 
