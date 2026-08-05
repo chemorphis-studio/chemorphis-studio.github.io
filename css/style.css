@@ -724,12 +724,67 @@ model-viewer {
         display: flex !important;
     }
 
+    /* Flawless Centering for Navigation */
     nav {
         display: flex;
         flex-direction: column;
         align-items: center;
+        justify-content: center;
+        text-align: center;
+        width: 100%;
         transition: padding 0.4s cubic-bezier(0.16, 1, 0.3, 1), gap 0.4s cubic-bezier(0.16, 1, 0.3, 1);
         overflow: hidden;
+    }
+
+    .nav-links {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+        width: 100% !important;
+        gap: 15px !important;
+    }
+
+    .nav-links a {
+        text-align: center !important;
+        width: auto !important;
+        margin: 0 !important;
+    }
+
+    /* Collapse Transition Overrides */
+    .nav-links a:not(.cta-btn) {
+        max-height: 40px;
+        opacity: 1;
+        transition: max-height 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease;
+    }
+
+    nav.collapsed-state {
+        padding: 10px 0 5px 0;
+        gap: 5px;
+    }
+
+    nav.collapsed-state .nav-links a:not(.cta-btn) {
+        max-height: 0;
+        opacity: 0;
+        padding: 0;
+        margin: 0;
+        pointer-events: none;
+    }
+
+    nav.collapsed-state .cta-btn {
+        width: 60% !important;
+        margin: 0 auto;
+    }
+
+    /* Expanded State Bottom Padding spacing */
+    nav.expanded-state {
+        padding-top: 25px;
+        padding-bottom: 30px !important;
+    }
+
+    nav.expanded-state .cta-btn {
+        width: 60% !important;
+        margin-top: 15px;
     }
 
     .nav-arrow {
@@ -745,88 +800,6 @@ model-viewer {
 
     nav.collapsed-state .nav-arrow {
         display: block;
-        align-items: center !important;
-    }
-
-    nav.expanded-state .nav-links a:not(.cta-btn) {
-        max-height: 40px;
-        opacity: 1;
-    }
-
-    /* 2x2 Grid for Nav Links */
-    .nav-links {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        grid-template-areas: 
-            "link1 link2"
-            "link3 link4"
-            "cta cta";
-        gap: 15px 20px;
-        width: fit-content;
-        margin: 0 auto;
-        transition: gap 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-
-    .nav-links a:nth-child(1) { grid-area: link1; }
-    .nav-links a:nth-child(2) { grid-area: link2; }
-    .nav-links a:nth-child(3) { grid-area: link3; }
-    .nav-links a:nth-child(4) { grid-area: link4; }
-    .nav-links a.cta-btn { 
-        grid-area: cta; 
-        width: 60% !important;
-        justify-self: center;
-    }
-
-    .nav-links a:not(.cta-btn) {
-        display: block;
-        text-align: center;
-        max-height: 40px; /* Fully expanded height */
-        opacity: 1;
-        transform: translateY(0);
-        transition: max-height 0.4s cubic-bezier(0.16, 1, 0.3, 1), 
-                    opacity 0.3s ease, 
-                    transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-
-    nav.collapsed-state {
-        padding: 15px 0 10px 0;
-        gap: 5px;
-    }
-
-    nav.collapsed-state .nav-links {
-        gap: 0; 
-    }
-
-    nav.collapsed-state .nav-links a:not(.cta-btn) {
-        max-height: 0;
-        opacity: 0;
-        transform: translateY(-10px); 
-        pointer-events: none;
-    }
-
-    nav.collapsed-state .logo {
-        font-size: 1.2rem;
-        transition: font-size 0.4s ease;
-    }
-
-    nav.collapsed-state .cta-btn {
-        width: 60% !important;
-        margin: 0 auto;
-        display: block;
-        text-align: center;
-    }
-
-    nav.expanded-state {
-        padding-top: 25px;
-        padding-bottom: 30px !important;
-    }
-
-    nav.expanded-state .nav-links {
-        gap: 15px 20px; 
-    }
-
-    nav.expanded-state .cta-btn {
-        margin-top: 15px;
     }
 
     .cta-btn {

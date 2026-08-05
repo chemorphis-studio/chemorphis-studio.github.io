@@ -18,6 +18,7 @@
             <a href="interactive.html" style="color: var(--blue);">Interactive 3D</a>
             <a href="graphics.html">Custom Graphics</a>
             <a href="why.html">Why Us?</a>
+            <a href="render.html">Cinematic Renders</a>
             <a href="contact.html" class="cta-btn">Contact Us</a>
         </div>
         <div class="nav-arrow" id="navArrow">▼</div>
@@ -49,6 +50,25 @@
         </script>
 
         <section class="interactive-showcase container">
+            <!-- Large Hero 3D Model Section -->
+            <section class="container" style="padding-top: 0; padding-bottom: 80px;">
+                <div class="media-showcase" style="aspect-ratio: 21/9; border-width: 3px; border-radius: 10px; overflow: hidden;">
+                    <model-viewer 
+                        src="assets/models/reaction.glb" 
+                        camera-controls 
+                        auto-rotate 
+                        interaction-prompt="hover" 
+                        shadow-intensity="1">
+                    </model-viewer>
+                </div>
+                <h3 class="red-heading" style="margin: 15px 0 10px;">
+                    The world at your fingertips.
+                </h3>
+
+                <p style="font-size: 1.15rem; color: #444; margin: 0 0 60px;">
+                    Chemistry isn't supposed to be confined to a flat page. Why confine your visuals?
+                </p>
+            </section>
             <!-- Asset 1 -->
             <div class="model-row">
                 <div class="model-text">

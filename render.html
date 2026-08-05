@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cinematic Renders | Chemorphis</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+    <style>
+        .render-section { padding: 100px 0; }
+        .render-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-top: 60px;
+        }
+        .render-card {
+            border: 2px solid var(--black);
+            border-radius: 8px;
+            overflow: hidden;
+            background: var(--white);
+            transition: transform 0.3s ease;
+        }
+        .render-card:hover {
+            transform: translateY(-5px);
+        }
+        .render-image {
+            width: 100%;
+            aspect-ratio: 16/10;
+            object-fit: cover;
+            border-bottom: 2px solid var(--black);
+        }
+        .render-info {
+            padding: 25px;
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="container">
+        <div class="logo"><a href="index.html" style="text-decoration:none; color:var(--black);">Chemorphis</a></div>
+        <div class="nav-links">
+            <a href="engine.html">Flagship Engine</a>
+            <a href="interactive.html">Interactive 3D</a>
+            <a href="graphics.html">Custom Graphics</a>
+            <a href="render.html" style="color: var(--blue);">Cinematic Renders</a>
+            <a href="why.html">Why Us?</a>
+            <a href="contact.html" class="cta-btn">Contact Us</a>
+        </div>
+        <div class="nav-arrow" id="navArrow">▼</div>
+    </nav>
+
+    <main>
+        <!-- Cinematic Header -->
+        <section class="page-header" style="position: relative; width: 100vw; overflow: hidden;">
+            <svg width="100%" height="100%" viewBox="0 0 1440 300" preserveAspectRatio="none" fill="none" xmlns="http://www.w3.org/2000/svg" style="position: absolute; left: 0; top: 0; opacity: 0.05; z-index: -1; pointer-events: none;">
+                <path d="M0 50 C 360 200, 1080 -50, 1440 50" stroke="black" stroke-width="2"/>
+                <path d="M0 80 C 360 230, 1080 -20, 1440 80" stroke="black" stroke-width="2"/>
+            </svg>
+            <div class="container">
+                <span class="mono-label">// 05. BREATHTAKING IMAGES</span>
+                <h1 style="font-size: 4rem; max-width: 1000px;">Cinematic Still Renders & Cover Art.</h1>
+                <p class="subheading" style="max-width: 800px;">Transform abstract structures into arresting, publication-grade artwork engineered for a wide array of educational and branding applications.</p>
+            </div>
+        </section>
+
+        <!-- The Value -->
+        <section class="container" style="padding: 100px 0 50px 0;">
+            <div class="grid-2">
+                <div>
+                    <h2 class="blue-heading" style="font-size: 2rem;">The Value</h2>
+                </div>
+                <div>
+                    <p style="font-size: 1.2rem; line-height: 1.8; color: #333;">Default molecular viewers communicate data but often fail to capture attention. Whether you are launching a course, pitching a book, or building a brand, visual authority dictates perceived value. Chemorphis leverages studio-grade ray tracing, cinematic depth of field, and physically-based material rendering (PBR) to craft visuals that demand focus.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Technical Capabilities -->
+        <section style="background: #0b0b0b; color: var(--white); padding: 120px 0;">
+            <div class="container">
+                <span class="mono-label" style="color: var(--red); font-size: 0.9rem; letter-spacing: 2px;">// VISUAL PRECISION SPECIFICATIONS</span>
+                <h2 style="font-size: 3.2rem; letter-spacing: -1.5px; margin-bottom: 60px; color: var(--white);">Technical Capabilities</h2>
+
+                <div class="matrix-container">
+                    <div class="matrix-header">
+                        <div class="matrix-col">DIMENSION</div>
+                        <div class="matrix-col" style="color: #666;">TYPICAL SOFTWARE</div>
+                        <div class="matrix-col" style="color: var(--blue);">CHEMORPHIS STUDIO</div>
+                    </div>
+
+                    <div class="matrix-row">
+                        <div class="matrix-col label">LIGHTING</div>
+                        <div class="matrix-col old-way">Flat, single-point ambient lighting. Structures appear washed out and dimensionally flat.</div>
+                        <div class="matrix-col new-way">3-point studio lighting to isolate target molecular elements and convey rich physical depth.</div>
+                    </div>
+
+                    <div class="matrix-row">
+                        <div class="matrix-col label">MATERIALS</div>
+                        <div class="matrix-col old-way">Basic, matte plastic spheres showing no refraction, reflection, or organic textures.</div>
+                        <div class="matrix-col new-way">Physically-based rendering (PBR) materials or volumetric textures tailored to your branding.</div>
+                    </div>
+
+                    <div class="matrix-row">
+                        <div class="matrix-col label">FOCUS</div>
+                        <div class="matrix-col old-way">Infinite sharpness across the image (zero depth), causing visual crowding.</div>
+                        <div class="matrix-col new-way">Cinematic depth of field, pulling the viewer's eye directly to the active site or reacting bond.</div>
+                    </div>
+
+                    <div class="matrix-row">
+                        <div class="matrix-col label">ENVIRONMENT</div>
+                        <div class="matrix-col old-way">Plain white or black flat background with no atmospheric scale.</div>
+                        <div class="matrix-col new-way">Volumetric atmospheric fog with light rays and subtle environmental falloff.</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Applications -->
+        <section class="container" style="padding: 100px 0;">
+            <div class="grid-2">
+                <div>
+                    <h2 class="red-heading" style="font-size: 2rem;">Applications</h2>
+                </div>
+                <div>
+                    <ul class="bullet-list">
+                        <li>Cover images or thumbnails for videos, podcasts, and courses.</li>
+                        <li>High-resolution figures for modern textbooks and publications.</li>
+                        <li>High-impact website hero banners and background layouts.</li>
+                        <li>Branded promotional graphics and corporate presentations.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Examples Grid -->
+        <section class="container" style="padding: 0 0 120px 0; border-top: 1px solid #eee;">
+            <h2 style="font-size: 2.5rem; margin-top: 80px; font-weight: 900; text-transform: uppercase;">The Gallery</h2>
+            
+            <div class="render-grid">
+                <!-- Render 1 -->
+                <div class="render-card">
+                    <img src="assets/images/render1.png" alt="Render 1" class="render-image">
+                    <div class="render-info">
+                        <h4 style="font-size: 1.3rem; margin-bottom: 10px;">1</h4>
+                        <p style="color: #666;">Description</p>
+                    </div>
+                </div>
+
+                <!-- Render 2 -->
+                <div class="render-card">
+                    <img src="assets/images/render2.png" alt="Render 2" class="render-image">
+                    <div class="render-info">
+                        <h4 style="font-size: 1.3rem; margin-bottom: 10px;">2</h4>
+                        <p style="color: #666;">Description</p>
+                    </div>
+                </div>
+
+                <!-- Render 3 -->
+                <div class="render-card">
+                    <img src="assets/images/render3.png" alt="Render 3" class="render-image">
+                    <div class="render-info">
+                        <h4 style="font-size: 1.3rem; margin-bottom: 10px;">3</h4>
+                        <p style="color: #666;">Description</p>
+                    </div>
+                </div>
+
+                <!-- Render 4 -->
+                <div class="render-card">
+                    <img src="assets/images/render4.png" alt="Render 4" class="render-image">
+                    <div class="render-info">
+                        <h4 style="font-size: 1.3rem; margin-bottom: 10px;">4</h4>
+                        <p style="color: #666;">Description</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="container footer-style">
+        &copy; CHEMORPHIS STUDIO. ALL RIGHTS RESERVED. // THE PREMIER CHEMISTRY VISUALISATION TOOL
+    </footer>
+
+    <!-- Interactive script for mobile collapsible menu -->
+    <script>
+        const nav = document.querySelector('nav');
+        const arrow = document.getElementById('navArrow');
+        let lastScrollY = window.scrollY;
+
+        window.addEventListener('scroll', () => {
+            if (window.innerWidth <= 768) {
+                if (window.scrollY > 80 && window.scrollY > lastScrollY) {
+                    if (!nav.classList.contains('expanded-state')) {
+                        nav.classList.add('collapsed-state');
+                    }
+                }
+                lastScrollY = window.scrollY;
+            }
+        });
+
+        if (arrow) {
+            arrow.addEventListener('click', () => {
+                if (nav.classList.contains('collapsed-state')) {
+                    nav.classList.remove('collapsed-state');
+                    nav.classList.add('expanded-state');
+                } else if (nav.classList.contains('expanded-state')) {
+                    nav.classList.remove('expanded-state');
+                    nav.classList.add('collapsed-state');
+                }
+            });
+        }
+    </script>
+</body>
+</html>
