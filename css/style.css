@@ -73,6 +73,7 @@ nav {
     font-size: 0.9rem;
     font-weight: 500;
     transition: color 0.3s;
+    padding-bottom: 12px;
 }
 
 .nav-links a:hover {
@@ -829,7 +830,7 @@ model-viewer {
     }
 
     .cta-btn {
-        width: 60%;
+        width: 80%;
         text-align: center;
         padding: 12px 12px;
         margin-bottom: 12px;
