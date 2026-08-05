@@ -56,6 +56,8 @@
             <svg width="100%" height="100%" viewBox="0 0 1440 300" preserveAspectRatio="none" fill="none" xmlns="http://www.w3.org/2000/svg" style="position: absolute; left: 0; top: 0; opacity: 0.05; z-index: -1; pointer-events: none;">
                 <path d="M0 50 C 360 200, 1080 -50, 1440 50" stroke="black" stroke-width="2"/>
                 <path d="M0 80 C 360 230, 1080 -20, 1440 80" stroke="black" stroke-width="2"/>
+                <path d="M0 110 C 360 260, 1080 10, 1440 110" stroke="black" stroke-width="2"/>
+                <path d="M0 140 C 360 290, 1080 40, 1440 140" stroke="black" stroke-width="2"/>
             </svg>
             <div class="container">
                 <span class="mono-label">// 05. BREATHTAKING IMAGES</span>
@@ -65,10 +67,10 @@
         </section>
 
         <!-- The Value -->
-        <section class="container" style="padding: 100px 0 50px 0;">
+        <section class="container blueprint-grid" style="padding: 100px 0;">
             <div class="grid-2">
                 <div>
-                    <h2 class="blue-heading" style="font-size: 2rem;">The Value</h2>
+                    <h2 class="blue-heading" style="font-size: 2rem; padding-left: 10px;">The Value</h2>
                 </div>
                 <div>
                     <p style="font-size: 1.2rem; line-height: 1.8; color: #333;">Default molecular viewers communicate data but often fail to capture attention. Whether you are launching a course, pitching a book, or building a brand, visual authority dictates perceived value. Chemorphis leverages studio-grade ray tracing, cinematic depth of field, and physically-based material rendering (PBR) to craft visuals that demand focus.</p>
@@ -79,14 +81,14 @@
         <!-- Technical Capabilities -->
         <section style="background: #0b0b0b; color: var(--white); padding: 120px 0;">
             <div class="container">
-                <span class="mono-label" style="color: var(--red); font-size: 0.9rem; letter-spacing: 2px;">// VISUAL PRECISION SPECIFICATIONS</span>
+                <span class="mono-label" style="color: var(--red); font-size: 0.9rem; letter-spacing: 2px;"><mark>// VISUAL PRECISION SPECIFICATIONS</mark></span>
                 <h2 style="font-size: 3.2rem; letter-spacing: -1.5px; margin-bottom: 60px; color: var(--white);">Technical Capabilities</h2>
 
                 <div class="matrix-container">
                     <div class="matrix-header">
                         <div class="matrix-col">DIMENSION</div>
                         <div class="matrix-col" style="color: #666;">TYPICAL SOFTWARE</div>
-                        <div class="matrix-col" style="color: var(--blue);">CHEMORPHIS STUDIO</div>
+                        <div class="matrix-col" style="color: var(--blue);"><mark>CHEMORPHIS STUDIO</mark></div>
                     </div>
 
                     <div class="matrix-row">
@@ -117,10 +119,10 @@
         </section>
 
         <!-- Applications -->
-        <section class="container" style="padding: 100px 0;">
+        <section class="container blueprint-grid" style="padding: 100px 0;">
             <div class="grid-2">
                 <div>
-                    <h2 class="red-heading" style="font-size: 2rem;">Applications</h2>
+                    <h2 class="red-heading" style="font-size: 2rem; padding-left: 10px;">The Applications</h2>
                 </div>
                 <div>
                     <ul class="bullet-list">
@@ -185,14 +187,13 @@
     <script>
         const nav = document.querySelector('nav');
         const arrow = document.getElementById('navArrow');
+        const dropdown = document.querySelector('.dropdown');
         let lastScrollY = window.scrollY;
 
         window.addEventListener('scroll', () => {
             if (window.innerWidth <= 768) {
                 if (window.scrollY > 80 && window.scrollY > lastScrollY) {
-                    if (!nav.classList.contains('expanded-state')) {
-                        nav.classList.add('collapsed-state');
-                    }
+                    nav.classList.add('collapsed-state');
                 }
                 lastScrollY = window.scrollY;
             }
@@ -200,12 +201,15 @@
 
         if (arrow) {
             arrow.addEventListener('click', () => {
-                if (nav.classList.contains('collapsed-state')) {
-                    nav.classList.remove('collapsed-state');
-                    nav.classList.add('expanded-state');
-                } else if (nav.classList.contains('expanded-state')) {
-                    nav.classList.remove('expanded-state');
-                    nav.classList.add('collapsed-state');
+                nav.classList.toggle('collapsed-state');
+            });
+        }
+
+        if (dropdown) {
+            dropdown.addEventListener('click', (e) => {
+                if (window.innerWidth <= 1024) {
+                    e.stopPropagation();
+                    dropdown.classList.toggle('active');
                 }
             });
         }

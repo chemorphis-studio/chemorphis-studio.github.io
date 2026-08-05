@@ -643,6 +643,32 @@ model-viewer {
     max-width: 600px;
 }
 
+/* Technical Blueprint Grid Pattern */
+.blueprint-grid {
+    position: relative;
+    background-color: var(--white);
+    background-image: 
+        linear-gradient(rgba(0, 0, 0, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 0, 0, 0.03) 1px, transparent 1px);
+    background-size: 40px 40px; /* Size of grid squares */
+}
+
+/* Vignette fade-out effect so grid softly dissolves towards section edges */
+.blueprint-grid::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: radial-gradient(circle, transparent 30%, var(--white) 80%);
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* Ensure contents stay on top of the grid vignette */
+.blueprint-grid .container {
+    position: relative;
+    z-index: 2;
+}
+
 /* ==========================================================================
    RESPONSIVE DESIGN SYSTEM (TABLETS & MOBILE)
    ========================================================================== */
@@ -724,7 +750,6 @@ model-viewer {
         display: flex !important;
     }
 
-    /* Flawless Centering for Navigation */
     nav {
         display: flex;
         flex-direction: column;
@@ -732,6 +757,8 @@ model-viewer {
         justify-content: center;
         text-align: center;
         width: 100%;
+        padding: 25px 0;
+        gap: 15px;
         transition: padding 0.4s cubic-bezier(0.16, 1, 0.3, 1), gap 0.4s cubic-bezier(0.16, 1, 0.3, 1);
         overflow: hidden;
     }
@@ -743,6 +770,7 @@ model-viewer {
         justify-content: center !important;
         width: 100% !important;
         gap: 15px !important;
+        transition: gap 0.4s ease;
     }
 
     .nav-links a {
@@ -751,7 +779,6 @@ model-viewer {
         margin: 0 !important;
     }
 
-    /* Collapse Transition Overrides */
     .nav-links a:not(.cta-btn) {
         max-height: 40px;
         opacity: 1;
@@ -763,28 +790,16 @@ model-viewer {
         gap: 5px;
     }
 
+    nav.collapsed-state .nav-links {
+        gap: 0 !important;
+    }
+
     nav.collapsed-state .nav-links a:not(.cta-btn) {
         max-height: 0;
         opacity: 0;
         padding: 0;
-        margin: 0;
+        margin: 0 !important;
         pointer-events: none;
-    }
-
-    nav.collapsed-state .cta-btn {
-        width: 60% !important;
-        margin: 0 auto;
-    }
-
-    /* Expanded State Bottom Padding spacing */
-    nav.expanded-state {
-        padding-top: 25px;
-        padding-bottom: 30px !important;
-    }
-
-    nav.expanded-state .cta-btn {
-        width: 60% !important;
-        margin-top: 15px;
     }
 
     .nav-arrow {
@@ -800,6 +815,14 @@ model-viewer {
 
     nav.collapsed-state .nav-arrow {
         display: block;
+    }
+
+    nav.collapsed-state .nav-arrow {
+        transform: rotate(0deg);
+    }
+
+    nav:not(.collapsed-state) .nav-arrow {
+        transform: rotate(180deg);
     }
 
     .cta-btn {

@@ -15,8 +15,8 @@
             <a href="engine.html">Flagship Engine</a>
             <a href="interactive.html">Interactive 3D</a>
             <a href="graphics.html" style="color: var(--blue);">Custom Graphics</a>
-            <a href="why.html">Why Us?</a>
             <a href="render.html">Cinematic Renders</a>
+            <a href="why.html">Why Us?</a>
             <a href="contact.html" class="cta-btn">Contact Us</a>
         </div>
         <div class="nav-arrow" id="navArrow">▼</div>
@@ -91,33 +91,21 @@
         const dropdown = document.querySelector('.dropdown');
         let lastScrollY = window.scrollY;
 
-        // 1. Scroll-Collapse (Collapse only, no auto-expansion on scroll up)
         window.addEventListener('scroll', () => {
             if (window.innerWidth <= 768) {
                 if (window.scrollY > 80 && window.scrollY > lastScrollY) {
-                    // Scrolling down: Collapse nav
-                    if (!nav.classList.contains('expanded-state')) {
-                        nav.classList.add('collapsed-state');
-                    }
+                    nav.classList.add('collapsed-state');
                 }
                 lastScrollY = window.scrollY;
             }
         });
 
-        // 2. Expand/Collapse strictly controlled by the Arrow
         if (arrow) {
             arrow.addEventListener('click', () => {
-                if (nav.classList.contains('collapsed-state')) {
-                    nav.classList.remove('collapsed-state');
-                    nav.classList.add('expanded-state');
-                } else if (nav.classList.contains('expanded-state')) {
-                    nav.classList.remove('expanded-state');
-                    nav.classList.add('collapsed-state');
-                }
+                nav.classList.toggle('collapsed-state');
             });
         }
 
-        // 3. Mobile Dropdown Open/Close Toggle (Touch support)
         if (dropdown) {
             dropdown.addEventListener('click', (e) => {
                 if (window.innerWidth <= 1024) {
