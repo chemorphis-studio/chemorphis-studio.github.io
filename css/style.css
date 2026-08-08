@@ -673,10 +673,6 @@ model-viewer {
     z-index: 2;
 }
 
-/* ==========================================================================
-   RESPONSIVE DESIGN SYSTEM (TABLETS & MOBILE)
-   ========================================================================== */
-
 /* 1. TABLET LAYOUTS (max-width: 1024px) */
 @media (max-width: 1024px) {
     .container {
