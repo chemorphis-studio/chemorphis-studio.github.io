@@ -289,6 +289,7 @@ video {
 .matrix-col.old-way {
     color: var(--white); 
     font-size: 1.05rem;
+    font-weight: 400;
 }
 
 .matrix-col.new-way {
