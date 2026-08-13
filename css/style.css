@@ -272,9 +272,9 @@ video {
 .matrix-col.label {
     font-family: var(--font-main);
     font-weight: 900;
-    font-size: 0.95rem;
+    font-size: 1.05rem;
     letter-spacing: 1px;
-    color: #666; /* Muted tech look */
+    color: #666;
     transition: color 0.3s ease;
 }
 
@@ -878,7 +878,7 @@ model-viewer {
         content: "TRADITIONAL";
         font-family: var(--font-main);
         font-weight: 900;
-        font-size: 0.7rem;
+        font-size: 0.9rem;
         letter-spacing: 1px;
         color: #666;
         display: block;
@@ -890,7 +890,7 @@ model-viewer {
         content: "CHEMORPHIS ENGINE";
         font-family: var(--font-main);
         font-weight: 900;
-        font-size: 0.7rem;
+        font-size: 0.9rem;
         letter-spacing: 1px;
         color: var(--white);
         display: block;
