@@ -34,7 +34,7 @@
 
         .media-showcase {
             background: var(--gray);
-            width: 60%;
+            width: 100%;
             border: 2px solid var(--black);
             position: relative;
         }
@@ -85,7 +85,7 @@
 
             <!-- Massive Hero Video -->
             <div class="container">
-                <div class="media-showcase" style="aspect-ratio: 16/9; border-width: 10px;">
+                <div class="media-showcase" style="aspect-ratio: 16/9; border-width: 10px; align-self: center; width: 60%">
                     <video autoplay muted loop playsinline preload="auto">
                         <source src="assets/videos/cyclohexane.mp4" type="video/mp4">
                     </video>
@@ -124,7 +124,7 @@
                     </div>
                     <div>
                         <div class="media-showcase" style="aspect-ratio: 16/9; margin-bottom: 20px; background: #111;">
-                            <img src="assets/videos/movement.mp4" alt="Movement of Molecules">
+                            <source src="assets/videos/movement.mp4" type="video/mp4">
                         </div>
                         <h4 style="font-size: 1.2rem; margin-bottom: 10px;">Butter-Smooth Animation</h4>
                         <p style="color: #555;">Watch molecules move, rotate, and arrows twist as particles approach each other. Calculated through linear interpolation to seamlessly build the motion.</p>
