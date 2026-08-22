@@ -13,7 +13,7 @@
 
     <style>
         .feature-block {
-            padding: 100px 0;
+            padding: 120px 0;
             border-top: 1px solid #ddd;
         }
         
@@ -72,7 +72,7 @@
 
     <main>
         <!-- Cinematic Header -->
-        <section class="page-header" style="position: relative; width: 100vw; overflow: hidden; padding-bottom: 0;">
+        <section class="page-header" style="position: relative; width: 100vw; overflow: hidden; padding-bottom: 30px;">
             <svg width="100%" height="100%" viewBox="0 0 1440 300" preserveAspectRatio="none" fill="none" xmlns="http://www.w3.org/2000/svg" style="position: absolute; left: 0; top: 0; opacity: 0.05; z-index: -1; pointer-events: none;">
                 <path d="M0 50 C 360 200, 1080 -50, 1440 50" stroke="black" stroke-width="2"/>
                 <path d="M0 80 C 360 230, 1080 -20, 1440 80" stroke="black" stroke-width="2"/>
@@ -85,30 +85,27 @@
 
             <!-- Massive Hero Video -->
             <div class="container">
-                <div style="align-items: center">
-                    <div class="media-showcase" style="aspect-ratio: 16/9; border-width: 10px; width: 80%">
+                <div style="display: flex; justify-content: center; margin-bottom: 40px;">
+                    <div class="media-showcase" style="aspect-ratio: 16/9; border-width: 3px; width: 70%">
                         <video autoplay muted loop playsinline preload="auto">
                             <source src="assets/videos/cyclohexane.mp4" type="video/mp4">
                         </video>
                     </div>
                 </div>
-
-                <h3 class="blue-heading" style="margin: 15px 0 10px;">
-                    See it in action.
-                </h3>
-
-                <p style="font-size: 1.15rem; color: #444; margin: 0 0 60px;">
-                    From Diels-Alder cycloadditions to cyclohexane ring flips and epoxide ring openings—if it exists on a reaction coordinate, we can visualise it for you.
-                </p>
+                <div style="justify-content: center;">
+                    <p style="font-size: 1.15rem; color: #444; margin: 0 0 60px;">
+                        From Diels-Alder cycloadditions to cyclohexane ring flips and epoxide ring openings—if it exists on a reaction coordinate, we can visualise it for you.
+                    </p>
+                </div>
             </div>
-            </section>
+        </section>
 
-            <!-- Features Section -->
-            <section class="container" style="padding-top: 0;">
-                <h2 style="font-size: 3rem; font-weight: 900; margin: 0 0 30px 30px; text-transform: uppercase; letter-spacing: -1px;">
-                    The Features
-                </h2>
-            </section>
+        <!-- Features Section -->
+        <section class="container" style="padding-top: 0;">
+            <h2 style="font-size: 3rem; font-weight: 900; margin: 0 0 30px 30px; text-transform: uppercase; letter-spacing: -1px;">
+                The Features
+            </h2>
+        </section>
         
         <!-- Heading 1: Introduction -->
         <section class="feature-block">
@@ -138,7 +135,7 @@
         </section>
 
         <!-- Heading 2: Transition States -->
-        <section class="feature-block">
+        <section class="feature-block" style="margin-bottom: 0px !important; padding-bottom: 0px;">
             <div class="container feature-grid">
                 <div class="text-content">
                     <h3 class="blue-heading" style="font-size: 1.8rem; margin-bottom: 20px;">Transition State Imaginary Mode Animation</h3>
@@ -159,15 +156,15 @@
         <section>
             <!-- Measurements Banner-->
             <div class="container">
-                <div style="margin-top: 80px; display: grid; grid-template-columns: 2fr 1fr; gap: 40px; align-items: center; background: rgba(255,0,0,0.03); padding: 40px; border: 1px solid rgba(255,0,0,0.1);">
+                <div class="feature-banner red-theme" style="grid-template-columns: 2fr 1fr;">
                     <div class="media-showcase" style="aspect-ratio: 21/9;">
                         <video autoplay muted loop playsinline preload="auto">
                             <source src="assets/videos/measurements.mp4" type="video/mp4">
                         </video>
                     </div>
                     <div>
-                        <h3 class="red-heading" style="font-size: 1.5rem; margin-bottom: 15px;">Dynamic Measurements</h3>
-                        <p style="color: #555; font-size: 1.1rem;">Witness bonds stretch and compress, angles open up, and dihedrals transform before your eyes.</p>
+                        <h3 class="red-heading">Measurements</h3>
+                        <p>Witness bonds stretch and compress, angles open up, and dihedrals transform before your eyes.</p>
                     </div>
                 </div>
             </div>
@@ -224,10 +221,10 @@
                 </div>
 
                 <!-- Partial Charges Banner -->
-                <div style="margin-top: 80px; display: grid; grid-template-columns: 1fr 2fr; gap: 40px; align-items: center; background: rgba(0,0,255,0.03); padding: 40px; border: 1px solid rgba(0,0,255,0.1);">
+                <div class="feature-banner blue-theme">
                     <div>
-                        <h3 class="blue-heading" style="font-size: 1.5rem; margin-bottom: 15px;">Partial Charges</h3>
-                        <p style="color: #555; font-size: 1.1rem;">See electron density, rendered stunningly in real time.</p>
+                        <h3 class="blue-heading">Dynamic Partial Charges</h3>
+                        <p>See electron density, rendered stunningly in real time.</p>
                     </div>
                     <div class="media-showcase" style="aspect-ratio: 16/9;">
                         <img src="assets/images/partial-charges.png" alt="Dynamic Partial Charges">

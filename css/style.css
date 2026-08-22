@@ -421,6 +421,36 @@ h2 {
     font-weight: 900;
 }
 
+.white-heading {
+    color: var(--white);
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    font-size: 1.6rem; 
+    letter-spacing: -0.5px;
+    font-weight: 900;
+}
+
+/* Universal Feature Banners (Blue & Red variants) */
+.feature-banner {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 40px;
+    align-items: center;
+    padding: 40px;
+    margin-top: 60px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.feature-banner.blue-theme {
+    background: rgba(0, 0, 255, 0.03);
+    border-color: rgba(0, 0, 255, 0.12);
+}
+
+.feature-banner.red-theme {
+    background: rgba(255, 0, 0, 0.03);
+    border-color: rgba(255, 0, 0, 0.12);
+}
+
 .bullet-list {
     list-style-type: disc; 
     padding-left: 20px;
@@ -754,7 +784,11 @@ model-viewer {
     .dropdown.active .dropdown-content {
         display: flex !important;
     }
-
+    .feature-banner {
+        grid-template-columns: 1fr !important;
+        padding: 25px !important;
+        gap: 25px !important;
+    }
     nav {
         display: flex;
         flex-direction: column;
@@ -928,5 +962,315 @@ model-viewer {
     /* Disable sticky desktop hover on touch devices */
     .dropdown:hover .dropdown-content {
         display: none;
+    }
+}
+
+/* ==========================================================================
+   DESIGN OPTIONS PAGE STYLING (design.html)
+   ========================================================================== */
+
+/* Technical Visual Tag Badges */
+.visual-tag {
+    position: absolute;
+    bottom: 12px;
+    left: 12px;
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    padding: 4px 10px;
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    border: 1px solid var(--black);
+    color: var(--black);
+    text-transform: uppercase;
+    z-index: 2;
+}
+
+/* Material Shader 13-Item Grid */
+.material-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.material-card {
+    border: 2px solid var(--black);
+    background: var(--white);
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.material-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.material-thumb-wrap {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 4/3;
+    background: var(--gray);
+    overflow: hidden;
+    border-bottom: 2px solid var(--black);
+}
+
+.material-thumb-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.material-card:hover .material-thumb-wrap img {
+    transform: scale(1.06);
+}
+
+.material-body {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.material-title {
+    font-size: 1.15rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.material-desc {
+    font-size: 0.9rem;
+    color: #555;
+    line-height: 1.5;
+    margin-bottom: 12px;
+    flex-grow: 1;
+}
+
+/* Color Swatch Component */
+.swatch-inline {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    color: var(--black);
+    background: #f1f1f1;
+    padding: 2px 8px;
+    border: 1px solid #ddd;
+    border-radius: 2px;
+    vertical-align: middle;
+}
+
+.color-box {
+    display: inline-block;
+    width: 13px;
+    height: 13px;
+    border: 1px solid rgba(0,0,0,0.2);
+    border-radius: 2px;
+    flex-shrink: 0;
+}
+
+/* Interactive Palette Stepper + Card Deck Layout */
+.palette-interactive-stage {
+    display: grid;
+    grid-template-columns: 340px 1fr;
+    gap: 60px;
+    align-items: center;
+    margin-top: 60px;
+    min-height: 520px;
+}
+
+/* Left Stepper / Slider Track */
+.palette-stepper {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding-left: 30px;
+    border-left: 2px solid #e5e5e5;
+}
+
+.stepper-node {
+    position: relative;
+    cursor: pointer;
+    padding: 10px 0;
+    transition: transform 0.2s ease;
+}
+
+.stepper-node::before {
+    content: '';
+    position: absolute;
+    left: -37px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--white);
+    border: 4px solid var(--black);
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    z-index: 2;
+}
+
+.stepper-node.active::before {
+    background: var(--blue);
+    border-color: var(--white);
+    box-shadow: 0 0 15px rgba(0, 0, 255, 0.5);
+    transform: translateY(-50%) scale(1.4);
+}
+
+.stepper-node:nth-child(2).active::before {
+    background: var(--red);
+    border-color: var(--white);
+    box-shadow: 0 0 15px rgba(255, 0, 0, 0.5);
+}
+
+.stepper-title {
+    font-size: 1.25rem;
+    font-weight: 900;
+    letter-spacing: -0.5px;
+    color: #888;
+    transition: color 0.3s ease;
+}
+
+.stepper-node.active .stepper-title {
+    color: var(--white);
+}
+
+.stepper-subtitle {
+    font-size: 0.85rem;
+    color: #999;
+    margin-top: 2px;
+}
+
+/* Right Stacked Card Deck */
+.deck-container {
+    position: relative;
+    width: 100%;
+    height: 480px;
+    perspective: 1000px;
+}
+
+.deck-card {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--white);
+    border: 2px solid var(--black);
+    border-radius: 8px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.06);
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    overflow: hidden;
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+                opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+                z-index 0.6s ease;
+    transform-origin: center bottom;
+    pointer-events: none;
+}
+
+.deck-card.is-active {
+    pointer-events: auto;
+}
+
+.deck-card-image {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: var(--gray);
+    border-right: 2px solid var(--black);
+    overflow: hidden;
+}
+
+.deck-card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.deck-card-content {
+    padding: 35px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: var(--white);
+}
+
+/* Responsive Overrides for Design Page */
+@media (max-width: 1024px) {
+    .palette-interactive-stage {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    .deck-container {
+        height: auto;
+        min-height: 480px;
+    }
+}
+
+@media (max-width: 768px) {
+    .deck-card {
+        grid-template-columns: 1fr;
+        height: auto;
+        position: relative;
+        display: none;
+    }
+    .deck-card.is-active {
+        display: block;
+    }
+    .deck-card-image {
+        aspect-ratio: 16/9;
+        border-right: none;
+        border-bottom: 2px solid var(--black);
+    }
+    .palette-stepper {
+        padding-left: 20px;
+        gap: 20px;
+    }
+    .stepper-node::before {
+        left: -27px;
+    }
+    /* Mobile Polish for design.html */
+    .material-grid {
+        grid-template-columns: 1fr !important; /* Stack materials 1 per row */
+        gap: 25px;
+    }
+
+    .palette-interactive-stage {
+        grid-template-columns: 1fr !important;
+        gap: 35px;
+        min-height: auto;
+    }
+
+    .deck-container {
+        height: auto;
+        min-height: 480px;
+    }
+
+    .deck-card {
+        grid-template-columns: 1fr !important;
+        height: auto;
+        position: absolute;
+    }
+
+    .deck-card-image {
+        aspect-ratio: 16/10;
+        border-right: none;
+        border-bottom: 2px solid var(--black);
+    }
+
+    .deck-card-content {
+        padding: 25px;
+    }
+
+    /* Section 4 Optical mechanics grid stacking */
+    .blueprint-grid .grid-2 {
+        grid-template-columns: 1fr !important;
+        gap: 30px !important;
     }
 }
