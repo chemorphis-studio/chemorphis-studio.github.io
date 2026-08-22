@@ -1274,3 +1274,226 @@ model-viewer {
         gap: 30px !important;
     }
 }
+/* ==========================================================================
+   TABLET & MOBILE RESPONSIVE ENGINE (UPGRADED)
+   ========================================================================== */
+
+/* 1. TABLET LAYOUTS (min-width: 769px) to (max-width: 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+    /* Generous edge padding so text never touches screen boundaries */
+    .container {
+        padding: 0 40px !important;
+        box-sizing: border-box;
+    }
+
+    h1 {
+        font-size: 3.2rem;
+    }
+
+    /* Tablet Two-Row Navigation */
+    nav {
+        height: auto;
+        padding: 20px 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .nav-links {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        gap: 12px 25px; /* Row 1 and Row 2 spacing */
+        max-width: 700px;
+        margin: 0 auto;
+    }
+
+    .nav-links a {
+        font-size: 0.85rem;
+        margin: 0;
+    }
+
+    .nav-links .cta-btn {
+        padding: 8px 18px;
+        font-size: 0.8rem;
+    }
+
+    /* Stack tablet page columns cleanly */
+    .hero-grid, .grid-2, .model-row, .model-row.reverse, .graphics-grid, .sub-feature-grid, .feature-grid, .feature-grid.reverse {
+        grid-template-columns: 1fr !important;
+        gap: 45px;
+    }
+
+    .model-row.reverse .model-text, .feature-grid.reverse .text-content {
+        order: initial;
+    }
+}
+
+/* 2. MOBILE PHONE LAYOUTS (max-width: 768px) */
+@media (max-width: 768px) {
+    /* Safe-zone edge gutters for mobile displays */
+    .container {
+        padding: 0 28px !important; /* Prevents edge crowding */
+        box-sizing: border-box;
+    }
+
+    section {
+        padding: 70px 0;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+        letter-spacing: -1px;
+    }
+
+    h2 {
+        font-size: 2.1rem;
+    }
+
+    .subheading {
+        font-size: 1.15rem;
+        margin-bottom: 35px;
+    }
+
+    /* Dropdown click behavior on touch */
+    .dropdown.active .dropdown-content {
+        display: flex !important;
+    }
+
+    .dropdown:hover .dropdown-content {
+        display: none;
+    }
+
+    /* Mobile Nav Layout & Smooth Transitions */
+    nav {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        width: 100%;
+        padding: 25px 0;
+        gap: 15px;
+        transition: padding 0.4s cubic-bezier(0.16, 1, 0.3, 1), gap 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        overflow: hidden;
+    }
+
+    .nav-links {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+        width: 100% !important;
+        gap: 15px !important;
+        transition: gap 0.4s ease;
+    }
+
+    .nav-links a {
+        text-align: center !important;
+        width: auto !important;
+        margin: 0 !important;
+    }
+
+    .cta-btn {
+        width: 60% !important;
+        margin: 0 auto !important;
+        display: block;
+        text-align: center;
+    }
+
+    .nav-links a:not(.cta-btn) {
+        max-height: 40px;
+        opacity: 1;
+        transition: max-height 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease;
+    }
+
+    nav.collapsed-state {
+        padding: 10px 0 5px 0;
+        gap: 2px;
+    }
+
+    nav.collapsed-state .nav-links {
+        gap: 0 !important;
+    }
+
+    nav.collapsed-state .nav-links a:not(.cta-btn) {
+        max-height: 0;
+        opacity: 0;
+        padding: 0;
+        margin: 0 !important;
+        pointer-events: none;
+    }
+
+    .nav-arrow {
+        display: none;
+        text-align: center;
+        font-size: 1rem;
+        cursor: pointer;
+        padding-top: 5px;
+        color: var(--black);
+        user-select: none;
+        transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    nav.collapsed-state .nav-arrow {
+        display: block;
+        transform: rotate(0deg);
+    }
+
+    nav:not(.collapsed-state) .nav-arrow {
+        transform: rotate(180deg);
+    }
+
+    /* Responsive component stacks */
+    .side-by-side-grid, .material-grid, .feature-banner, .matrix-row {
+        grid-template-columns: 1fr !important;
+        gap: 20px;
+    }
+
+    .matrix-header {
+        display: none;
+    }
+
+    .matrix-row {
+        padding: 25px 0;
+    }
+
+    .matrix-col.old-way::before {
+        content: "TRADITIONAL";
+        font-weight: 900;
+        font-size: 0.7rem;
+        letter-spacing: 1px;
+        color: var(--red);
+        display: block;
+        margin-bottom: 5px;
+    }
+
+    .matrix-col.new-way::before {
+        content: "CHEMORPHIS ENGINE";
+        font-weight: 900;
+        font-size: 0.7rem;
+        letter-spacing: 1px;
+        color: var(--blue);
+        display: block;
+        margin-bottom: 5px;
+    }
+
+    .timeline {
+        padding-left: 20px;
+    }
+
+    .timeline::before {
+        left: 4px;
+    }
+
+    .timeline-item {
+        padding-left: 30px;
+    }
+
+    .timeline-item::before {
+        left: -31px;
+        top: 4px;
+    }
+}
